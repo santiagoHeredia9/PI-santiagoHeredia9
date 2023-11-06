@@ -1,0 +1,10 @@
+.cartas{
+    display: inline-block;
+    background-color: aqua;
+    height: 20%;
+    width: 20%;
+    margin: 2rem;
+    padding: 1rem;
+    font-size: medium;
+
+}

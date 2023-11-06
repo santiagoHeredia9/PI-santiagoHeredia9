@@ -1,0 +1,13 @@
+.navbar{
+    background-color: #1AACAC;
+    color: bisque;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.navitem{
+    margin-right: 0;
+}
