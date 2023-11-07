@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import validationErrors from "./validation";
 import style from "./Form.module.css";
+import validation from "./validation";
 
 const Form = (props) => {
   const [userData, setUserData] = useState({
@@ -15,10 +15,9 @@ const Form = (props) => {
   });
 
   const handleChange = (event) => {
-    const property = event.target.name;
-    const value = event.target.value;
-    setUserData({ ...userData, [property]: value });
-    validationErrors({ ...userData, [property]: value }, errors, setErrors);
+    let { name, value } = event.target;
+    setUserData({ ...userData, [name]: value });
+    setErrors(validation({ ...userData, [name]: value }));
   };
 
   const handleSubmit = (event) => {
@@ -42,7 +41,7 @@ const Form = (props) => {
             value={userData.email}
             onChange={handleChange}
           />
-          <span className={style.span}>{errors.email}</span>
+          {errors.email && <span className={style.span}>{errors.email}</span>}
 
           <label className={style.label} htmlFor="password">
             Password
@@ -55,7 +54,9 @@ const Form = (props) => {
             value={userData.password}
             onChange={handleChange}
           />
-          <span className={style.span}>{errors.password}</span>
+          {errors.password && (
+            <span className={style.span}>{errors.password}</span>
+          )}
 
           <button className={style.boton} onClick={handleSubmit}>
             Submit

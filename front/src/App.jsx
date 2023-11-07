@@ -6,28 +6,29 @@ import Detail from './components/detail/Detail.jsx';
 import Form from "./components/form/Form.jsx"
 import { useState, useEffect, } from 'react';
 import axios from 'axios';
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import style from "./components/cards/Cards.module.css"
+import { Route, Routes, useNavigate, useLocation} from 'react-router-dom';
+
 
 
 function App() {
   const [characters, setCharacters] = useState([]);
   
-  const [access, setAccess] = useState(false);
+  const [isLoged, setIsLoged] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation()
   const EMAIL = 'santywk8@gmail.com';
   const PASSWORD = '123nasi';
 
   function login(userData) {
      if (userData.password === PASSWORD && userData.email === EMAIL) {
-        setAccess(true);
+        setIsLoged(true);
         navigate('/home');
      }
   }
 
   useEffect(() => {
-    !access && navigate('/');
- }, [access]);
+    !isLoged && navigate('/');
+ }, [isLoged]);
 
   const APIKEY = 'pi-santiagoheredia9';
 
@@ -50,9 +51,9 @@ function App() {
   }
 
   return (
-    <div className={style.body}>
+    
     <div className='App'>
-      <Nav onSearch={onSearch} />
+      {location.pathname !== "/" && <Nav onSearch={onSearch} />}
       
       <Routes>
         <Route path="/" element={<Form login={login} />} />
@@ -62,7 +63,7 @@ function App() {
       </Routes>
      
     </div>
-    </div>
+    
   );
 }
 
