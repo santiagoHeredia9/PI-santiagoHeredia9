@@ -28,8 +28,9 @@ const Form = (props) => {
   return (
     <div className={style.divEpico}>
       <form className={style.inicio}>
-        <h1 className={style.titulo}>Login</h1>
+        <h1 className={style.titulo}>Welcome everyone!</h1>
         <div className={style.div}>
+    
           <label className={style.label} htmlFor="email">
             Email
           </label>
@@ -59,7 +60,7 @@ const Form = (props) => {
           )}
 
           <button className={style.boton} onClick={handleSubmit}>
-            Submit
+            Login
           </button>
         </div>
       </form>

@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import Card from "../card/Card";
-// import style from "./Cards.module.css"
+import style from './Cards.module.css'
 export default function Cards({ characters, onClose }) {
   
    return (
-     <>
+     <div className={style.container}>
          {characters.map((character) => (
             <Card
                key={character.id}
@@ -19,6 +19,6 @@ export default function Cards({ characters, onClose }) {
             />
          ))}
     
-      </>
+      </div>
    );
 }

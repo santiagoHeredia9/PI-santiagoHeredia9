@@ -18,14 +18,13 @@ const validation = userData => {
       errors.email = "Campo obligatorio"
     }
 
+    
+    if(userData.password.length < 6 && userData.password.length > 10){
+      errors.password = "Debe tener entre 6 y 10 caracteres"
+    }
    
     if(!userData.password.match(/[0-9]/)){
       errors.password = "Debe contener al menos un número"
-    }
-
-
-    if(userData.password.length < 6 && userData.password.length > 10){
-      errors.password = "Debe tener entre 6 y 10 caracteres"
     }
 
     if(!userData.password){
