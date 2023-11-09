@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-export default function SearchBar({ onSearch }) {    //yo ahora quiero crear una funcion que busque mediante un id el personaje que quiero
-  const [id, setId] = useState("");                 //creo un estado el cual se modificará en cuanto el input cambie su valor
+import style from '../nav-bar/Nav.module.css'
+export default function SearchBar({ onSearch }) {    
+  const [id, setId] = useState("");                 
   const handleChange = (event) => {
-   setId(event.target.value);                       //creamos la funcion que llevará a cabo esto
+   setId(event.target.value);                       
   };
   return (
     <div>
-      <input type="search" value={id} onChange={handleChange} placeholder="Introduce un ID del personaje" />
-      <button onClick={() => onSearch(id)}>Agregar</button>
+      <input className={style.bar}type="search" value={id} onChange={handleChange} placeholder="Introduce un ID del personaje" />
+      <button className={style.navitem2} onClick={() => onSearch(id)}>ADD</button>
     </div>
   );
 }

@@ -13,12 +13,24 @@ export default function Card(props) {
       </Link>
       <img src={props.image} alt="characterimage" className={style.img} />
       <div className={style.info}>
-        <h2>Status: {props.status}</h2>
-        <h2>Specie: {props.species}</h2>
+        <h2>
+          <span className={style.span}>Gender: </span>
+          {props.gender}
+        </h2>
+        <h2>
+          <span className={style.span}>Specie: </span>
+          {props.species}
+        </h2>
       </div>
-      <div className={style.info2} >
-        <h2>Gender: {props.gender}</h2>
-        <h2>Origin: {props.origin}</h2>
+      <div className={style.info2}>
+        <h2>
+          <span className={style.span}>Status: </span>
+          {props.status}
+        </h2>
+        <h2>
+          <span className={style.span}>From: </span>
+          {props.origin}
+        </h2>
       </div>
     </div>
   );

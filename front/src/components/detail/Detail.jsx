@@ -10,7 +10,7 @@ const Detail = () => {
     axios(`https://rym2.up.railway.app/api/character/${id}?key=${APIKEY}`).then(
       ({ data }) => {
         if (data.name) {
-          setCharacter(data);
+          setCharacter(data); 
         } else {
           window.alert("No hay personajes con ese ID");
         }
@@ -18,6 +18,8 @@ const Detail = () => {
     );
     return setCharacter({});
   }, [id]);
+
+
   return character.name ? (
     <div>
       <h2>{character.name}</h2>

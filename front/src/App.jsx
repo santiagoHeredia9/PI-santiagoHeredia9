@@ -4,6 +4,7 @@ import Nav from "./components/nav-bar/Nav.jsx";
 import About from "./components/about/About.jsx";
 import Detail from "./components/detail/Detail.jsx";
 import Form from "./components/form/Form.jsx";
+import Error from "./components/error/Error.jsx"
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
@@ -32,16 +33,21 @@ function App() {
   const APIKEY = "pi-santiagoheredia9";
 
   function onSearch(id) {
-    axios(`https://rym2.up.railway.app/api/character/${id}?key=${APIKEY}`).then(
-      ({ data }) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          window.alert("¡No hay personajes con este ID!");
+    if (characters.some((character) => character.id === Number(id))) {
+      window.alert("¡Este personaje ya se ha agregado!");
+    } else {
+      axios(`https://rym2.up.railway.app/api/character/${id}?key=${APIKEY}`).then(
+        ({ data }) => {
+          if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+          } else {
+            window.alert("¡No hay personajes con este ID!");
+          }
         }
-      }
-    );
+      );
+    }
   }
+  
 
   function onClose(id) {
     setCharacters(
@@ -62,6 +68,7 @@ function App() {
           />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="*" element={<Error />}/>
         </Routes>
       </div>
     
