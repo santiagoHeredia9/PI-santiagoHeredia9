@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./App.css";
 import Cards from "./components/cards/Cards.jsx";
 import Nav from "./components/nav-bar/Nav.jsx";
@@ -23,7 +24,7 @@ function App() {
     if (userData.password === PASSWORD && userData.email === EMAIL) {
       setIsLoged(true);
       navigate("/home");
-    }
+    } else{window.alert("La contraseña o email son incorrectos")}
   }
 
   useEffect(() => {

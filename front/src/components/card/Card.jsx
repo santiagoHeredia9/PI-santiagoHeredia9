@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import style from "./Card.module.css";
+import style from "./Card.module.scss";
 
 export default function Card(props) {
   return (

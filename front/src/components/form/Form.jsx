@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import style from "./Form.module.css";
+import style from "./Form.module.scss";
 import validation from "./validation";
 
 const Form = (props) => {
@@ -13,7 +13,7 @@ const Form = (props) => {
     email: "",
     password: "",
   });
-
+  
   const handleChange = (event) => {
     let { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
@@ -35,7 +35,8 @@ const Form = (props) => {
             Email
           </label>
           <input
-            className={style.items}
+            
+            className={`${style.items} ${errors.email ? (style.error) : (style.right)}`}
             type="text"
             name="email"
             id="email"
@@ -48,7 +49,7 @@ const Form = (props) => {
             Password
           </label>
           <input
-            className={style.items}
+             className={`${style.items} ${errors.password ? (style.error) : (style.right)}`}
             type="password"
             name="password"
             id="password"

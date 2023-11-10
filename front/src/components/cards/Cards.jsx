@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import Card from "../card/Card";
-import style from './Cards.module.css'
+import style from './Cards.module.scss'
 export default function Cards({ characters, onClose }) {
   
    return (

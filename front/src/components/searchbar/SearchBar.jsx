@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import style from '../nav-bar/Nav.module.css'
+import style from '../nav-bar/Nav.module.scss'
 export default function SearchBar({ onSearch }) {    
   const [id, setId] = useState("");                 
   const handleChange = (event) => {
