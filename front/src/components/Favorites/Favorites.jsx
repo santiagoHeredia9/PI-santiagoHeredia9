@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import { connect } from "react-redux";
 import Card from "../card/Card";
