@@ -18,6 +18,10 @@ const Nav = ({ onSearch }) => {
           <button className={style.logOut}>Log out</button>
         </Link>
 
+        <Link to="/favorites">
+          <button className={style.fav}>Favorites</button>
+        </Link>
+
         <SearchBar className={style.bar} onSearch={onSearch} />
       </div>
     </div>

@@ -45,11 +45,11 @@ const Form = (props) => {
           />
           {errors.email && <span className={style.span}>{errors.email}</span>}
 
-          <label className={style.label} htmlFor="password">
+          <label className={style.label2} htmlFor="password">
             Password
           </label>
           <input
-             className={`${style.items} ${errors.password ? (style.error) : (style.right)}`}
+             className={`${style.items2} ${errors.password ? (style.error) : (style.right)}`}
             type="password"
             name="password"
             id="password"
@@ -57,7 +57,7 @@ const Form = (props) => {
             onChange={handleChange}
           />
           {errors.password && (
-            <span className={style.span}>{errors.password}</span>
+            <span className={style.span2}>{errors.password}</span>
           )}
 
           <button className={style.boton} onClick={handleSubmit}>

@@ -66,8 +66,10 @@
 }
 
 .boton{
-    display: flex;
-    align-items: flex-end;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-family: cursive;
 
 }
 
@@ -76,4 +78,15 @@
     color: aliceblue;
     border-color: orange;
     
+}
+
+.heart{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+   
+}
+
+.heart:hover{
+    cursor: pointer;
 }

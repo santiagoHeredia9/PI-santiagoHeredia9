@@ -36,6 +36,7 @@
   color: antiquewhite;
   width: 6rem;
   height: 3rem;
+  cursor: pointer;
 }
 
 .bar {
@@ -60,6 +61,7 @@
   color: white;
   width: 4.9rem;
   height: 1.9rem;
+  cursor: pointer;
 }
 
 .navitem:hover {
@@ -67,6 +69,25 @@
   color: white;
   width: 4.9rem;
   height: 1.9rem;
+  cursor: pointer;
+}
+.fav{
+  font-family: "Bebas Neue", sans-serif;
+  color: aliceblue;
+  position: absolute;
+  margin-right: 2rem;
+  left: 30rem;
+  bottom: 2rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: rgb(170, 19, 196);
+}
+
+.fav:hover{
+  background-color: rgb(229, 28, 222);
+  width: 4.9rem;
+  height: 1.9rem;
+  cursor: pointer;
 }
 
 .logOut {
@@ -85,4 +106,5 @@
   background-color: rgb(126, 3, 3);
   width: 4.9rem;
   height: 1.9rem;
+  cursor: pointer;
 }

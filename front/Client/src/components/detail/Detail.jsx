@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import style from "./Detail.module.scss"
 
 const Detail = () => {
   const [character, setCharacter] = useState({});
   const { id } = useParams();
-  const APIKEY = "pi-santiagoheredia9";
+
   useEffect(() => {
-    axios(`https://rym2.up.railway.app/api/character/${id}?key=${APIKEY}`).then(
+    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
       ({ data }) => {
         if (data.name) {
           setCharacter(data); 
@@ -21,7 +22,8 @@ const Detail = () => {
 
 
   return character.name ? (
-    <div>
+    
+    <div className={style.Detail}>
       <h2>{character.name}</h2>
       <h4>STATUS:{character.status}</h4>
       <h4>GENDER:{character.gender}</h4>

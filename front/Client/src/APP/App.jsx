@@ -1,14 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import "./App.css";
-import Cards from "./components/cards/Cards.jsx";
-import Nav from "./components/nav-bar/Nav.jsx";
-import About from "./components/about/About.jsx";
-import Detail from "./components/detail/Detail.jsx";
-import Form from "./components/form/Form.jsx";
-import Error from "./components/error/Error.jsx"
+import style from "./App.module.scss"
+import Cards from "../components/cards/Cards.jsx";
+import Nav from "../components/nav-bar/Nav.jsx";
+import About from "../components/about/About.jsx";
+import Detail from "../components/detail/Detail.jsx";
+import Form from "../components/form/Form.jsx";
+import Error from "../components/error/Error.jsx"
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
+import Favorites from "../components/Favorites/Favorites.jsx";
 
 
 function App() {
@@ -31,18 +32,18 @@ function App() {
     !isLoged && navigate("/");
   }, [isLoged]);
 
-  const APIKEY = "pi-santiagoheredia9";
+
 
   function onSearch(id) {
     if (characters.some((character) => character.id === Number(id))) {
-      window.alert("¡Este personaje ya se ha agregado!");
+      window.alert("This character already exist !");
     } else {
-      axios(`https://rym2.up.railway.app/api/character/${id}?key=${APIKEY}`).then(
+      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
         ({ data }) => {
           if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
           } else {
-            window.alert("¡No hay personajes con este ID!");
+            window.alert("The character doesn't exist!");
           }
         }
       );
@@ -57,20 +58,21 @@ function App() {
   }
 
   return (
-    
-      <div className="App">
+    <div className={`${style.App} ${location.pathname === '/detail/:id' ? style.Detail : ''}`}>
         {location.pathname !== "/" && <Nav onSearch={onSearch} />}
-
+        <div className={style.transitionContainer}>
         <Routes>
           <Route path="/" element={<Form login={login} />} />
           <Route
             path="/home"
             element={<Cards characters={characters} onClose={onClose} />}
           />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="*" element={<Error />}/>
         </Routes>
+        </div>
       </div>
     
   );

@@ -8,7 +8,7 @@ export default function SearchBar({ onSearch }) {
   };
   return (
     <div>
-      <input className={style.bar}type="search" value={id} onChange={handleChange} placeholder="Introduce un ID del personaje" />
+      <input className={style.bar}type="search" value={id} onChange={handleChange} placeholder="Introduce a number " />
       <button className={style.navitem2} onClick={() => onSearch(id)}>ADD</button>
     </div>
   );
