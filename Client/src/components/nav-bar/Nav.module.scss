@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&display=swap");
+
+.navbar {
+  height: 2rem;
+  background-color: #5a5a5a;
+  color: bisque;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+.navitem {
+  font-family: "Bebas Neue", sans-serif;
+  margin-right: 0;
+  width: 5rem;
+  height: 2rem;
+  position: absolute;
+  left: 6rem;
+  bottom: 2rem;
+  margin-left: 3rem;
+  background-color: rgb(19, 196, 196);
+}
+
+.navitem2 {
+  font-family: "Bebas Neue", sans-serif;
+  background-color: rgb(150, 230, 31);
+  width: 6rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+}
+.navitem2:hover {
+  background-color: green;
+  color: antiquewhite;
+  width: 6rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.home {
+  font-family: "Bebas Neue", sans-serif;
+  position: absolute;
+  margin-right: 2rem;
+  left: 3rem;
+  bottom: 2rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: rgb(19, 196, 196);
+}
+
+.home:hover {
+  background-color: rgb(28, 28, 172);
+  color: white;
+  width: 4.9rem;
+  height: 1.9rem;
+  cursor: pointer;
+}
+
+.navitem:hover {
+  background-color: rgb(28, 28, 172);
+  color: white;
+  width: 4.9rem;
+  height: 1.9rem;
+  cursor: pointer;
+}
+.fav{
+  font-family: "Bebas Neue", sans-serif;
+  color: aliceblue;
+  position: absolute;
+  margin-right: 2rem;
+  left: 30rem;
+  bottom: 2rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: rgb(170, 19, 196);
+}
+
+.fav:hover{
+  background-color: rgb(229, 28, 222);
+  width: 4.9rem;
+  height: 1.9rem;
+  cursor: pointer;
+}
+
+.logOut {
+  font-family: "Bebas Neue", sans-serif;
+  color: aliceblue;
+  position: absolute;
+  margin-right: 2rem;
+  left: 18rem;
+  bottom: 2rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: rgb(196, 60, 19);
+}
+
+.logOut:hover {
+  background-color: rgb(126, 3, 3);
+  width: 4.9rem;
+  height: 1.9rem;
+  cursor: pointer;
+}
