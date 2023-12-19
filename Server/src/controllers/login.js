@@ -8,10 +8,9 @@ const login = (req, res) => {
   );
 
   if (userFound) {
-    res.status(200).json({ access: true });
+    return res.status(200).json({ access: true });
   } else {
-
-    res.status(200).json({ access: false });
+    return res.status(200).json({ access: false });
   }
 };
 
