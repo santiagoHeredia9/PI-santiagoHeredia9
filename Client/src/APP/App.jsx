@@ -18,39 +18,47 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  function login(userData) {
-    const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-      const { access } = data;
-      setIsLoged(data);
+  async function login(userData) {
+    try {
+      const { email, password } = userData;
+      const URL = "http://localhost:3001/rickandmorty/login/";
+      const response = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
+      const { access } = response.data;
+      setIsLoged(response.data);
       access && navigate("/home");
-    });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
     !isLoged && navigate("/");
   }, [isLoged]);
 
-  function onSearch(id) {
-    if (characters.some((character) => character.id === Number(id))) {
-      window.alert("This character already exist !");
-    } else {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-        ({ data }) => {
-          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-          } else {
-            window.alert("The character doesn't exist!");
-          }
+  async function onSearch(id) {
+    try {
+      if (characters.some((character) => character.id === Number(id))) {
+        window.alert("This character already exist !");
+      } else {
+        const response = await axios(
+          `http://localhost:3001/rickandmorty/character/${id}`
+        );
+        if (response.data.name) {
+          setCharacters((oldChars) => [...oldChars, response.data]);
+        } else {
+          window.alert("The character doesn't exist!");
         }
-      );
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
   function onClose(id) {
     setCharacters(
-      characters.filter((character) => character.id !== Number(id))
+      characters.filter((character) => character.id !== parseInt(id))
     );
   }
 

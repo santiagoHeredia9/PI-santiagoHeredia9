@@ -7,11 +7,9 @@ import { removeFav, filterCards, orderCards } from "../../redux/actions";
 
 import style from "./Favorites.module.scss";
 
- const Favorites = () => {
+const Favorites = () => {
   const dispatch = useDispatch();
-  const { myFavorites } = useSelector(state => state)
-
- 
+  const myFavs = useSelector((state) => state.myFavorites); 
 
   const onClose = (id) => {
     dispatch(removeFav(id));
@@ -19,18 +17,17 @@ import style from "./Favorites.module.scss";
 
   const handleOrder = (e) => {
     dispatch(orderCards(e.target.value));
- 
   };
 
   const handleFilter = (e) => {
     dispatch(filterCards(e.target.value));
-   
   };
+
   return (
     <>
       <div className={style.container}>
         <select className={style.select1} onChange={handleOrder}>
-          <option >Select order</option>
+          <option>Select order</option>
           <option value="A">Ascending</option>
           <option value="D">Descending</option>
         </select>
@@ -42,24 +39,26 @@ import style from "./Favorites.module.scss";
           <option value="unknown">Unknown</option>
         </select>
 
-        {myFavorites.map((character) => (
-          <Card
-            key={character.id}
-            id={character.id}
-            name={character.name}
-            status={character.status}
-            species={character.species}
-            gender={character.gender}
-            origin={character.origin.name}
-            image={character.image}
-            onClose={onClose}
-          />
-        ))}
+        {myFavs && myFavs.length > 0 ? (
+          myFavs.map((character) => (
+            <Card
+              key={character.id} 
+              id={character.id}
+              name={character.name}
+              status={character.status}
+              species={character.species}
+              gender={character.gender}
+              origin={character.origin ? character.origin.name : "Unknown"}
+              image={character.image}
+              onClose={onClose}
+            />
+          ))
+        ) : (
+          <p>No favorites yet.</p>
+        )}
       </div>
     </>
   );
 };
 
-
-
-export default Favorites
+export default Favorites;

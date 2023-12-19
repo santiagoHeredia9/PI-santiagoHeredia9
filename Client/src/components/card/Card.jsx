@@ -17,15 +17,20 @@ export default function Card({
 }) {
   const myFavs = useSelector((state) => state.myFavorites);
   const dispatch = useDispatch();
-  useEffect(() => {
-    myFavs.forEach((fav) => {
-      if (fav.id === id) {
-        setIsFav(true);
-      }
-    });
-  }, [myFavs]);
-
   const [isFav, setIsFav] = useState(false);
+
+  useEffect(() => {
+    // Asegúrate de que myFavs tenga un valor antes de iterar sobre él
+    if (myFavs) {
+      myFavs.forEach((fav) => {
+        if (fav.id === id) {
+          setIsFav(true);
+        }
+      });
+    }
+  }, [myFavs, id]);
+
+ 
 
   const handleFavorite = () => {
     if (isFav) {
@@ -51,7 +56,7 @@ export default function Card({
   return (
     <div className={style.cartas}>
       {isFav ? (
-        <span className={style.heart} onClick={handleFavorite} >
+        <span className={style.heart} onClick={handleFavorite}>
           ❤️
         </span>
       ) : (
