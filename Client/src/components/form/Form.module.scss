@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+@import "../../../styles/mixins.scss";
 
 body {
-  background-image: url(./img/yatusabe.webp);
+  background-image: url(../../../img/yatusabe.webp);
   background-size: cover;
   height: auto;
   margin: 0;
@@ -9,8 +10,8 @@ body {
 }
 
 .divEpico {
-  background-image: url(./img/RICKEPICO.gif);
-  background-size: 50%;
+  background-image: url(../../../img/RICKEPICO.gif);
+  background-size: 45%;
   background-repeat: no-repeat;
   background-color: #222222;
   position: absolute;
@@ -19,6 +20,14 @@ body {
   width: 100%;
   height: 100%;
   padding: 0.3rem;
+  @include smallDevices {
+    background-size: 35%;
+    background-position: 15.5rem 2rem;
+  }
+  @include mediumDevices {
+    background-size: 40%;
+    background-position: 5rem 10rem;
+  }
 }
 
 .inicio {
@@ -28,8 +37,21 @@ body {
   margin-left: 70rem;
   padding: 3rem;
   border-radius: 10px;
-  background: linear-gradient(to bottom, white, gray);
+  background: linear-gradient(to bottom, rgb(201, 201, 201), gray);
   position: relative;
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.951);
+  @include smallDevices {
+    margin-top: 20rem;
+    margin-left: 13rem;
+    height: 15rem;
+    width: 15rem;
+  }
+  @include mediumDevices {
+    margin-top: 10rem;
+    margin-left: 25rem;
+    height: 15rem;
+    width: 15rem;
+  }
 }
 
 .titulo {
@@ -37,8 +59,17 @@ body {
   top: 1rem;
   left: 7.7rem;
   color: rgb(107, 212, 7);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.702);
   font-size: 3.5rem;
   font-family: "Creepster", cursive;
+  @include smallDevices {
+    font-size: 1.7rem;
+    left: 4.5rem;
+  }
+  @include mediumDevices {
+    font-size: 2rem;
+    left: 3.5rem;
+  }
 }
 
 .div {
@@ -54,10 +85,18 @@ body {
   font-size: larger;
   font-family: "Creepster", cursive;
   color: rgb(0, 0, 0);
-
+  @include smallDevices {
+    font-size: small;
+    top: 4.5rem;
+    left: 6.3rem;
+  }
+  @include mediumDevices {
+    font-size: small;
+    top: 4.5rem;
+    left: 6.3rem;
+  }
 }
 .label2 {
-  
   position: absolute;
   top: 13rem;
   left: 1rem;
@@ -66,9 +105,17 @@ body {
   font-size: larger;
   font-family: "Creepster", cursive;
   color: rgb(0, 0, 0);
+  @include smallDevices {
+    font-size: small;
+    top: 9.5rem;
+    left: 5.9rem;
+  }
+  @include mediumDevices {
+    font-size: small;
+    top: 9.5rem;
+    left: 5.9rem;
+  }
 }
-
-
 
 .boton {
   position: absolute;
@@ -85,6 +132,20 @@ body {
   font-size: 1.5rem;
   font-weight: bolder;
   font-family: "Creepster", cursive;
+  @include smallDevices {
+    width: 6rem;
+    height: 3rem;
+    font-size: 100%;
+    bottom: 1rem;
+    right: 7.5rem;
+  }
+  @include mediumDevices {
+    width: 6rem;
+    height: 3rem;
+    font-size: 100%;
+    bottom: 1rem;
+    right: 7.5rem;
+  }
 }
 
 .boton:hover {
@@ -100,9 +161,21 @@ body {
   padding: 0.5rem;
   margin: 0 auto;
   background-color: #c7c7c7;
+  @include smallDevices {
+    width: 10%;
+    height: 0, 1rem;
+    top: 8rem;
+    left: 3rem;
+  }
+  @include mediumDevices {
+    width: 10%;
+    height: 0, 1rem;
+    top: 8rem;
+    left: 3rem;
+  }
 }
 
-.items2{
+.items2 {
   position: absolute;
   top: 19rem;
   left: 5rem;
@@ -111,6 +184,18 @@ body {
   padding: 0.5rem;
   margin: 0 auto;
   background-color: #c7c7c7;
+  @include smallDevices {
+    width: 10%;
+    height: 0, 1rem;
+    top: 13rem;
+    left: 3rem;
+  }
+  @include mediumDevices {
+    width: 10%;
+    height: 0, 1rem;
+    top: 13rem;
+    left: 3rem;
+  }
 }
 
 .span {
@@ -120,15 +205,41 @@ body {
   left: 17.7rem;
   margin: 0;
   color: rgb(187, 50, 0);
+  font-weight: bolder;
+  @include smallDevices {
+    font-weight: bolder;
+    font-size: 0.7rem;
+    top: 10.5rem;
+    left: 3rem;
+  }
+  @include mediumDevices {
+    font-weight: bolder;
+    font-size: 0.7rem;
+    top: 10.5rem;
+    left: 3rem;
+  }
 }
 
-.span2{
+.span2 {
   display: inline;
   position: absolute;
   top: 15.5rem;
   left: 17.7rem;
   margin: 0;
   color: rgb(187, 50, 0);
+  font-weight: bolder;
+  @include smallDevices {
+    font-weight: bolder;
+    font-size: 0.7rem;
+    top: 15.5rem;
+    left: 3rem;
+  }
+  @include mediumDevices {
+    font-weight: bolder;
+    font-size: 0.7rem;
+    top: 15.5rem;
+    left: 3rem;
+  }
 }
 
 .error {
@@ -137,7 +248,7 @@ body {
   padding: 0.5rem;
   margin: 0 auto;
   background-color: #c7c7c7;
-  border: 2px solid red;
+  border: 2px solid rgb(206, 6, 6);
 }
 
 .right {

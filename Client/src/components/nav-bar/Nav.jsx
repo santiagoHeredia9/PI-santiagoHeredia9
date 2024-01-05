@@ -5,7 +5,7 @@ import style from "./Nav.module.scss";
 
 const Nav = ({ onSearch }) => {
   return (
-    <div>
+    <div className={style.container}>
       <div className={style.navbar}>
         <Link to="/home">
           <button className={style.home}>Home</button>
@@ -14,12 +14,12 @@ const Nav = ({ onSearch }) => {
           <button className={style.navitem}>About</button>
         </Link>
 
-        <Link to="/">
-          <button className={style.logOut}>Log out</button>
-        </Link>
-
         <Link to="/favorites">
           <button className={style.fav}>Favorites</button>
+        </Link>
+
+        <Link to="/">
+          <button className={style.logOut}>Log out</button>
         </Link>
 
         <SearchBar className={style.bar} onSearch={onSearch} />

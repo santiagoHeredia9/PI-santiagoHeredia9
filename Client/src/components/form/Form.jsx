@@ -13,7 +13,7 @@ const Form = (props) => {
     email: "",
     password: "",
   });
-  
+
   const handleChange = (event) => {
     let { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
@@ -24,19 +24,20 @@ const Form = (props) => {
     event.preventDefault();
     props.login(userData);
   };
+ 
 
   return (
-    <div className={style.divEpico}>
+    <div className={`${style.formulario} ${style.divEpico}`}>
       <form className={style.inicio}>
         <h1 className={style.titulo}>Welcome everyone!</h1>
         <div className={style.div}>
-    
           <label className={style.label} htmlFor="email">
             Email
           </label>
           <input
-            
-            className={`${style.items} ${errors.email ? (style.error) : (style.right)}`}
+            className={`${style.items} ${
+              errors.email ? style.error : style.right
+            }`}
             type="text"
             name="email"
             id="email"
@@ -49,7 +50,9 @@ const Form = (props) => {
             Password
           </label>
           <input
-             className={`${style.items2} ${errors.password ? (style.error) : (style.right)}`}
+            className={`${style.items2} ${
+              errors.password ? style.error : style.right
+            }`}
             type="password"
             name="password"
             id="password"

@@ -64,9 +64,8 @@ function App() {
 
   return (
     <div
-      className={`${style.App} ${
-        location.pathname === "/detail/:id" ? style.Detail : ""
-      }`}
+      className={`${style.App}
+       ${location.pathname === "/home" ? style.gridLayout : ""}`}
     >
       {location.pathname !== "/" && <Nav onSearch={onSearch} />}
       <div className={style.transitionContainer}>

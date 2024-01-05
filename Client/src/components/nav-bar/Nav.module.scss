@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&display=swap");
+@import "../../../styles/mixins.scss";
 
 .navbar {
   height: 2rem;
@@ -7,24 +8,19 @@
   padding: 2rem;
   margin-bottom: 2rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 8rem;
   align-items: center;
-  position: relative;
-}
-
-.navitem {
-  font-family: "Bebas Neue", sans-serif;
-  margin-right: 0;
-  width: 5rem;
-  height: 2rem;
-  position: absolute;
-  left: 6rem;
-  bottom: 2rem;
-  margin-left: 3rem;
-  background-color: rgb(19, 196, 196);
+  @include smallDevices {
+   gap: 4rem;
+  }
+  @include mediumDevices {
+    gap: 6rem
+  }
 }
 
 .navitem2 {
+  margin-left: 1rem;
   font-family: "Bebas Neue", sans-serif;
   background-color: rgb(150, 230, 31);
   width: 6rem;
@@ -42,18 +38,88 @@
 .bar {
   width: 30rem;
   height: 2rem;
-  margin-right: 1rem;
+
+  @include smallDevices {
+    width: 10rem;
+  }
+  @include mediumDevices {
+    width: 15rem;
+  }
 }
 
 .home {
   font-family: "Bebas Neue", sans-serif;
-  position: absolute;
-  margin-right: 2rem;
-  left: 3rem;
-  bottom: 2rem;
+
   width: 5rem;
   height: 2rem;
   background-color: rgb(19, 196, 196);
+  @include smallDevices {
+    width: 3rem;
+    font-size: 70%;
+    height: 1.5rem;
+  }
+  @include mediumDevices {
+    width: 3rem;
+    font-size: 70%;
+    height: 1.5rem;
+  }
+}
+.navitem {
+  font-family: "Bebas Neue", sans-serif;
+ 
+  width: 5rem;
+  height: 2rem;
+
+  background-color: rgb(19, 196, 196);
+  @include smallDevices {
+    width: 3rem;
+    font-size: 70%;
+    height: 1.5rem;
+  }
+
+  @include mediumDevices {
+    width: 3rem;
+    font-size: 70%;
+    height: 1.5rem;
+  }
+}
+
+.logOut {
+  font-family: "Bebas Neue", sans-serif;
+  color: aliceblue;
+
+  width: 5rem;
+  height: 2rem;
+  background-color: rgb(196, 60, 19);
+  @include smallDevices {
+    width: 3rem;
+    font-size: 70%;
+    height: 1.5rem;
+  }
+  @include mediumDevices {
+    width: 3rem;
+    font-size: 70%;
+    height: 1.5rem;
+  }
+}
+
+.fav {
+  font-family: "Bebas Neue", sans-serif;
+  color: aliceblue;
+
+  width: 5rem;
+  height: 2rem;
+  background-color: rgb(170, 19, 196);
+  @include smallDevices {
+    width: 3rem;
+    font-size: 70%;
+    height: 1.5rem;
+  }
+  @include mediumDevices {
+    width: 3rem;
+    font-size: 70%;
+    height: 1.5rem;
+  }
 }
 
 .home:hover {
@@ -62,6 +128,14 @@
   width: 4.9rem;
   height: 1.9rem;
   cursor: pointer;
+  @include smallDevices {
+    width: 2.9rem;
+    height: 1.4rem;
+  }
+  @include mediumDevices {
+    width: 2.9rem;
+    height: 1.4rem;
+  }
 }
 
 .navitem:hover {
@@ -70,36 +144,29 @@
   width: 4.9rem;
   height: 1.9rem;
   cursor: pointer;
-}
-.fav{
-  font-family: "Bebas Neue", sans-serif;
-  color: aliceblue;
-  position: absolute;
-  margin-right: 2rem;
-  left: 30rem;
-  bottom: 2rem;
-  width: 5rem;
-  height: 2rem;
-  background-color: rgb(170, 19, 196);
+  @include smallDevices {
+    width: 2.9rem;
+    height: 1.4rem;
+  }
+  @include mediumDevices {
+    width: 2.9rem;
+    height: 1.4rem;
+  }
 }
 
-.fav:hover{
+.fav:hover {
   background-color: rgb(229, 28, 222);
   width: 4.9rem;
   height: 1.9rem;
   cursor: pointer;
-}
-
-.logOut {
-  font-family: "Bebas Neue", sans-serif;
-  color: aliceblue;
-  position: absolute;
-  margin-right: 2rem;
-  left: 18rem;
-  bottom: 2rem;
-  width: 5rem;
-  height: 2rem;
-  background-color: rgb(196, 60, 19);
+  @include smallDevices {
+    width: 2.9rem;
+    height: 1.4rem;
+  }
+  @include mediumDevices {
+    width: 2.9rem;
+    height: 1.4rem;
+  }
 }
 
 .logOut:hover {
@@ -107,4 +174,12 @@
   width: 4.9rem;
   height: 1.9rem;
   cursor: pointer;
+  @include smallDevices {
+    width: 2.9rem;
+    height: 1.4rem;
+  }
+  @include mediumDevices {
+    width: 2.9rem;
+    height: 1.4rem;
+  }
 }
