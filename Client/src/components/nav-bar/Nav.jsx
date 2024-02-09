@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar";
-import style from "./Nav.module.scss";
+import style from "./Nav.module.css";
 
 const Nav = ({ onSearch }) => {
   return (
-    <div className={style.container}>
+
       <div className={style.navbar}>
         <Link to="/home">
           <button className={style.home}>Home</button>
@@ -24,7 +24,7 @@ const Nav = ({ onSearch }) => {
 
         <SearchBar className={style.bar} onSearch={onSearch} />
       </div>
-    </div>
+   
   );
 };
 

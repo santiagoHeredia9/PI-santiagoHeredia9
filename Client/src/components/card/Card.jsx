@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import style from "./Card.module.scss";
-import { addFav, removeFav } from "../../redux/actions";
+import style from "./Card.module.css";
+import { addFav, deleteCharacter, removeFav } from "../../redux/actions";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -11,7 +11,6 @@ export default function Card({
   gender,
   status,
   origin,
-  onClose,
   name,
   species,
 }) {
@@ -20,7 +19,7 @@ export default function Card({
   const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
-    // Asegúrate de que myFavs tenga un valor antes de iterar sobre él
+  
     if (myFavs) {
       myFavs.forEach((fav) => {
         if (fav.id === id) {
@@ -29,8 +28,6 @@ export default function Card({
       });
     }
   }, [myFavs, id]);
-
- 
 
   const handleFavorite = () => {
     if (isFav) {
@@ -45,7 +42,6 @@ export default function Card({
           gender,
           status,
           origin,
-          onClose,
           name,
           species,
         })
@@ -65,7 +61,7 @@ export default function Card({
         </span>
       )}
 
-      <button className={style.boton} onClick={() => onClose(id)}>
+      <button className={style.boton} onClick={() => dispatch(deleteCharacter(id))}>
         X
       </button>
       <Link className={style.link} to={`/detail/${id}`}>

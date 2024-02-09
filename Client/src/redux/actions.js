@@ -1,9 +1,25 @@
 import axios from "axios";
 
+export const FETCH_CHARACTER = "FETCH_CHARACTER";
+export const DELETE_CHARACTER = "DELETE_CHARACTER";
 export const ADD_FAV = "ADD_FAV";
 export const REMOVE_FAV = "REMOVE_FAV";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
+
+export function fetchCharacter(character) {
+  return {
+    type: FETCH_CHARACTER,
+    payload: character,
+  };
+}
+
+export function deleteCharacter(id) {
+  return {
+    type: DELETE_CHARACTER,
+    payload: id
+  }
+}
 
 export function addFav(character) {
   return async (dispatch) => {

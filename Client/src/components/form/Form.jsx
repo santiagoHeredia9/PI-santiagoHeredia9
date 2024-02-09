@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import style from "./Form.module.scss";
+import style from "./Form.module.css";
 import validation from "./validation";
 
 const Form = (props) => {

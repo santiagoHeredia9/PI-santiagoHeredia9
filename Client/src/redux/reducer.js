@@ -1,4 +1,4 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions";
+import { FETCH_CHARACTER, ADD_FAV, REMOVE_FAV, FILTER, ORDER, DELETE_CHARACTER } from "./actions";
 
 const initialState = {
   allCharacters: [],
@@ -8,6 +8,18 @@ let allCharactersOrder, myFavoritesOrder, sortOrder;
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
+    case FETCH_CHARACTER:
+      return {
+        ...state,
+        allCharacters: [...state.allCharacters, payload],
+      };
+
+    case DELETE_CHARACTER:
+      return {
+        ...state,
+        allCharacters: state.allCharacters.filter((char) => char.id !== payload)
+      }  
+
     case ADD_FAV:
       return {
         ...state,
