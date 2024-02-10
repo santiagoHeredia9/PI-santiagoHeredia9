@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import style from "./Form.module.css";
 import validation from "./validation";
 
-const Form = (props) => {
+const Form = () => {
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -14,6 +16,28 @@ const Form = (props) => {
     password: "",
   });
 
+  const [isLoged, setIsLoged] = useState(false);
+  const navigate = useNavigate();
+
+  async function login(userData) {
+    try {
+      const { email, password } = userData;
+      const URL = "http://localhost:3001/rickandmorty/login/";
+      const response = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
+      const { access } = response.data;
+      setIsLoged(response.data);
+      access && navigate("/home");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    !isLoged && navigate("/");
+  }, [isLoged]);
+
   const handleChange = (event) => {
     let { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
@@ -22,7 +46,7 @@ const Form = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.login(userData);
+  login(userData);
   };
  
 
