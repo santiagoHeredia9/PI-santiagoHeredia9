@@ -8,7 +8,7 @@ import style from "./Favorites.module.css";
 
 const Favorites = () => {
   const dispatch = useDispatch();
-  const myFavs = useSelector((state) => state.myFavorites); 
+  const myFavs = useSelector((state) => state.myFavorites);
 
   const onClose = (id) => {
     dispatch(removeFav(id));
@@ -38,23 +38,22 @@ const Favorites = () => {
           <option value="unknown">Unknown</option>
         </select>
 
-        {myFavs && myFavs.length > 0 ? (
+        {
           myFavs.map((character) => (
             <Card
-              key={character.id} 
+              key={character.id}
               id={character.id}
               name={character.name}
               status={character.status}
               species={character.species}
               gender={character.gender}
-              origin={character.origin ? character.origin.name : "Unknown"}
+              origin={character.origin.name}
               image={character.image}
               onClose={onClose}
             />
           ))
-        ) : (
-          <p>No favorites yet.</p>
-        )}
+        }
+
       </div>
     </>
   );

@@ -22,34 +22,16 @@ export function deleteCharacter(id) {
 }
 
 export function addFav(character) {
-  return async (dispatch) => {
-    try {
-      const endpoint = "http://localhost:3001/rickandmorty/fav";
-      const response = await axios.post(endpoint, character);
-      return dispatch({
-        type: ADD_FAV,
-        payload: response.data,
-      });
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  return {
+    type: ADD_FAV,
+    payload: character
+  }
 }
 
 export const removeFav = (id) => {
-  return async (dispatch) => {
-    try {
-      const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
-      const response = await axios.delete(endpoint);
-
-      dispatch({
-        type: REMOVE_FAV,
-        payload: response.data,
-      });
-    } catch (error) {
-      console.error("Error al eliminar favorito:", error);
-      throw error;
-    }
+  return {
+    type: REMOVE_FAV,
+    payload: id
   };
 };
 

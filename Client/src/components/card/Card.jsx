@@ -5,46 +5,30 @@ import { addFav, deleteCharacter, removeFav } from "../../redux/actions";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-export default function Card({
-  id,
-  image,
-  gender,
-  status,
-  origin,
-  name,
-  species,
-}) {
+export default function Card(props) {
   const myFavs = useSelector((state) => state.myFavorites);
   const dispatch = useDispatch();
   const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
-  
+
     if (myFavs) {
       myFavs.forEach((fav) => {
-        if (fav.id === id) {
+        if (fav.id === props.id) {
           setIsFav(true);
         }
       });
     }
-  }, [myFavs, id]);
+  }, [myFavs, props.id]);
 
   const handleFavorite = () => {
     if (isFav) {
       setIsFav(false);
-      dispatch(removeFav(id));
+      dispatch(removeFav(props.id));
     } else {
       setIsFav(true);
       dispatch(
-        addFav({
-          id,
-          image,
-          gender,
-          status,
-          origin,
-          name,
-          species,
-        })
+        addFav(props)
       );
     }
   };
@@ -61,31 +45,35 @@ export default function Card({
         </span>
       )}
 
-      <button className={style.boton} onClick={() => dispatch(deleteCharacter(id))}>
-        X
-      </button>
-      <Link className={style.link} to={`/detail/${id}`}>
-        <h2>{name}</h2>
+      {
+        isFav ? (
+          <button onClick={() => props.onClose(props.id)} className={style.boton}>X</button>
+        ) : (
+          <button onClick={() => dispatch(deleteCharacter(props.id))} className={style.boton}>X</button>
+        )
+      }
+      <Link className={style.link} to={`/detail/${props.id}`}>
+        <h2>{props.name}</h2>
       </Link>
-      <img src={image} alt="characterimage" className={style.img} />
+      <img src={props.image} alt="characterimage" className={style.img} />
       <div className={style.info}>
         <h2>
           <span className={style.span}>Gender: </span>
-          {gender}
+          {props.gender}
         </h2>
         <h2>
           <span className={style.span}>Specie: </span>
-          {species}
+          {props.species}
         </h2>
       </div>
       <div className={style.info2}>
         <h2>
           <span className={style.span}>Status: </span>
-          {status}
+          {props.status}
         </h2>
         <h2>
           <span className={style.span}>From: </span>
-          {origin}
+          {props.origin}
         </h2>
       </div>
     </div>

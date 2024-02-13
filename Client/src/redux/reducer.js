@@ -18,20 +18,23 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         allCharacters: state.allCharacters.filter((char) => char.id !== payload)
-      }  
-
+      }
     case ADD_FAV:
+      // Verificamos si el personaje ya está en favoritos antes de agregarlo
+      if (state.myFavorites.find((char) => char.id === payload.id)) {
+        return state; // No hacemos cambios si ya está en favoritos
+      }
       return {
         ...state,
-        myFavorites: payload,
-        allCharacters: payload,
+        myFavorites: [...state.myFavorites, payload],
       };
 
     case REMOVE_FAV:
       return {
         ...state,
-        myFavorites: payload,
-        allCharacters: payload,
+        myFavorites: state.myFavorites.filter(
+          (char) => char.id !== payload
+        )
       };
 
     case FILTER:
