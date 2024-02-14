@@ -10,9 +10,6 @@ const Favorites = () => {
   const dispatch = useDispatch();
   const myFavs = useSelector((state) => state.myFavorites);
 
-  const onClose = (id) => {
-    dispatch(removeFav(id));
-  };
 
   const handleOrder = (e) => {
     dispatch(orderCards(e.target.value));
@@ -39,20 +36,23 @@ const Favorites = () => {
         </select>
 
         {
-          myFavs.map((character) => (
-            <Card
-              key={character.id}
-              id={character.id}
-              name={character.name}
-              status={character.status}
-              species={character.species}
-              gender={character.gender}
-              origin={character.origin.name}
-              image={character.image}
-              onClose={onClose}
-            />
-          ))
+          myFavs.map((character) => {
+            console.log("Character Origin:", character.origin); // Imprime el objeto origin para depurar
+            return (
+              <Card
+                key={character.id}
+                id={character.id}
+                name={character.name}
+                status={character.status}
+                species={character.species}
+                gender={character.gender}
+                origin={character.origin}
+                image={character.image}
+              />
+            );
+          })
         }
+
 
       </div>
     </>

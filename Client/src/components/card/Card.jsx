@@ -33,6 +33,20 @@ export default function Card(props) {
     }
   };
 
+  const handleCloseFav = (id) => {
+
+    if (isFav) {
+      const confirmDelete = window.confirm("You are going to delete this character from favorites. Are you sure?")
+      confirmDelete ? dispatch(removeFav(id)) : "";
+      setIsFav(false)
+
+    }
+  }
+
+  const handleClose = (id) => {
+    dispatch(deleteCharacter(id))
+  }
+
   return (
     <div className={style.cartas}>
       {isFav ? (
@@ -47,9 +61,9 @@ export default function Card(props) {
 
       {
         isFav ? (
-          <button onClick={() => props.onClose(props.id)} className={style.boton}>X</button>
+          <button onClick={() => handleCloseFav(props.id)} className={style.boton}>X</button>
         ) : (
-          <button onClick={() => dispatch(deleteCharacter(props.id))} className={style.boton}>X</button>
+          <button onClick={() => handleClose(props.id)} className={style.boton}>X</button>
         )
       }
       <Link className={style.link} to={`/detail/${props.id}`}>
