@@ -1,17 +1,18 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import SearchBar from "../searchbar/SearchBar";
+import SearchBar from "../Searchbar/SearchBar";
 import style from "./Nav.module.css";
 
 const Nav = ({ onSearch }) => {
   return (
-
-      <div className={style.navbar}>
+    <header className={style.navbar}>
+      {/* logo */}
+      <nav className={style.navigation}>
         <Link to="/home">
           <button className={style.home}>Home</button>
         </Link>
         <Link to="/about">
-          <button className={style.navitem}>About</button>
+          <button className={style.about}>About</button>
         </Link>
 
         <Link to="/favorites">
@@ -21,10 +22,10 @@ const Nav = ({ onSearch }) => {
         <Link to="/">
           <button className={style.logOut}>Log out</button>
         </Link>
+      </nav>
 
-        <SearchBar className={style.bar} onSearch={onSearch} />
-      </div>
-   
+      <SearchBar className={style.searchBar} onSearch={onSearch} />
+    </header>
   );
 };
 

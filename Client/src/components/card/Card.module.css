@@ -1,92 +1,84 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&display=swap');
-
-
-.cartas{
-    display: inline-block;
-    background: linear-gradient(to bottom, rgb(255, 166, 0), rgb(255, 158, 158));
-    width: 23rem;
-    height: 23rem;
-    margin: 2rem;
-    padding: 1rem;
-    font-size: medium;
-    position: relative;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 1rem;
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: lighter;
-
-}
-.link{
-    text-decoration: none;
-    color: inherit;
-}
-.link:hover{
-    color: orangered;
+.cartas {
+  transition: all 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgb(91, 193, 237);
+  border-radius: 1rem;
+  width: 25rem;
+  height: 25rem;
+  position: relative;
 }
 
-.info{
-    width: 40%;
-   text-align: center;
-   font-size: 50%;
-   background-color: aliceblue;
-   padding: 0.5rem;
-   border-radius: 1rem;
-   position: absolute;
-   bottom: 2rem;
-   right: 1rem;
-   
- 
-   
+.cartasFav {
+  transition: all 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgb(216, 139, 255);
+  border-radius: 1rem;
+  width: 25rem;
+  height: 25rem;
+  position: relative;
 }
 
-.info2{
-    width: 40%;
-    text-align: center;
-    font-size: 50%;
-    position: absolute;
-    bottom: 2rem;
-    background-color: aliceblue;
-    padding: 0.5rem;
-    border-radius: 1rem;
- 
-    
+.img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 20%;
+  border: 2px solid rgb(13, 130, 166);
 }
 
-.img{
-    width: 10rem;
-    border-radius: 100%;
-    border: 1px solid black;
+.info {
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.7rem;
+  text-align: center;
+  color: rgb(199, 229, 255);
+  font-weight: bold;
 }
 
-.span{
-    color: orangered;
-    font-size: medium;
-    margin-right: 1px
+.heart {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-.boton{
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    font-family: cursive;
-
+.heart:hover {
+  top: 0.5rem;
 }
 
-.boton:hover{
-    background-color: red;
-    color: aliceblue;
-    border-color: orange;
-    
+.boton {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  transition: all 0.3s ease;
 }
 
-.heart{
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-   
+.boton:hover {
+  cursor: pointer;
+  color: red;
+  font-size: 1.7rem;
 }
 
-.heart:hover{
-    cursor: pointer;
+.link {
+  color: rgb(93, 93, 93);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.link:hover {
+  color: antiquewhite;
 }

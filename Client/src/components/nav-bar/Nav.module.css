@@ -1,99 +1,125 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&display=swap");
-
-
 .navbar {
-  height: 2rem;
-  background-color: #5a5a5a;
-  color: bisque;
-  padding: 2rem;
-  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
-  gap: 8rem;
   align-items: center;
+  gap: 20rem;
+  background-color: rgb(92, 92, 92);
+  height: 5rem;
 }
 
-.navitem2 {
-  margin-left: 1rem;
-  font-family: "Bebas Neue", sans-serif;
-  background-color: rgb(150, 230, 31);
-  width: 6rem;
-  height: 3rem;
-  border-radius: 0.5rem;
-}
-.navitem2:hover {
-  background-color: green;
-  color: antiquewhite;
-  width: 6rem;
-  height: 3rem;
-  cursor: pointer;
-}
-
-.bar {
-  width: 30rem;
-  height: 2rem;
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  width: auto;
+  gap: 6rem;
 }
 
 .home {
-  font-family: "Bebas Neue", sans-serif;
-
-  width: 5rem;
-  height: 2rem;
-  background-color: rgb(19, 196, 196);
-}
-.navitem {
-  font-family: "Bebas Neue", sans-serif;
-
-  width: 5rem;
-  height: 2rem;
-
-  background-color: rgb(19, 196, 196);
+  background-color: rgb(219, 151, 24);
+  border: none;
+  border-radius: 14px;
+  color: rgb(255, 255, 255);
+  height: 1rem;
+  width: 4rem;
+  height: 1.8rem;
+  text-align: center;
+  font-size: 0.75rem; 
 }
 
-.logOut {
-  font-family: "Bebas Neue", sans-serif;
-  color: aliceblue;
-
-  width: 5rem;
-  height: 2rem;
-  background-color: rgb(196, 60, 19);
+.about {
+  background-color: rgb(219, 151, 24);
+  border: none;
+  border-radius: 14px;
+  color: rgb(255, 255, 255);
+  height: 1rem;
+  width: 4rem;
+  height: 1.8rem;
+  text-align: center;
+  font-size: 0.75rem;
 }
 
 .fav {
-  font-family: "Bebas Neue", sans-serif;
-  color: aliceblue;
+  background-color: rgb(180, 48, 206);
+  border: none;
+  border-radius: 14px;
+  color: rgb(255, 255, 255);
+  height: 1rem;
+  width: 4rem;
+  height: 1.8rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
 
-  width: 5rem;
-  height: 2rem;
-  background-color: rgb(170, 19, 196);
+.logOut {
+  background-color: rgb(180, 30, 30);
+  border: none;
+  border-radius: 14px;
+  color: rgb(255, 255, 255);
+  height: 1rem;
+  width: 4rem;
+  height: 1.8rem;
+  text-align: center;
+  font-size: 0.75rem;
 }
 
 .home:hover {
-  background-color: rgb(28, 28, 172);
+  transition: background-color 0.8s ease;
+  background-color: rgb(133, 101, 12);
+  cursor: pointer;
+}
+
+.about:hover {
+  transition: background-color 0.8s ease;
+  background-color: rgb(133, 101, 12);
+  cursor: pointer;
+}
+
+.logOut:hover{
+    transition: background-color 0.8s ease;
+    background-color: rgb(110, 19, 19);
+    cursor: pointer;
+}
+
+.fav:hover{
+    transition: background-color 0.8s ease;
+    background-color: rgb(117, 33, 93);
+    cursor: pointer;
+}
+
+.searchBar {
+  height: 1.7rem;
+  width: 20rem;
+  margin-right: 2rem;
+}
+
+.add {
+  background-color: rgb(94, 202, 0);
+  border: none;
+  border-radius: 14px;
+  color: rgb(255, 255, 255);
+  height: 1rem;
+  width: 5.5rem;
+  height: 2.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.add:hover{
+    transition: background-color 0.8s ease;
+    background-color: rgb(5, 100, 0);
+    cursor: pointer;
+}
+
+.search{
   color: white;
-  width: 4.9rem;
-  height: 1.9rem;
-  cursor: pointer;
+  height: 1.3rem;
+  width: 4rem;
 }
 
-.navitem:hover {
-  background-color: rgb(28, 28, 172);
-  color: white;
-  width: 4.9rem;
-  height: 1.9rem;
-  cursor: pointer;
-}
-
-.fav:hover {
-  background-color: rgb(229, 28, 222);
-  width: 4.9rem;
-  height: 1.9rem;
-  cursor: pointer;
-}
-
-.logOut:hover {
-  background-color: rgb(126, 3, 3);
-  width: 4.9rem;
-  height: 1.9rem;
-  cursor: pointer;
+.searchSection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

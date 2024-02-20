@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import axios from "axios"
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import style from "./Form.module.css";
@@ -46,53 +46,54 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  login(userData);
+    login(userData);
   };
- 
 
   return (
-    <div className={`${style.formulario} ${style.divEpico}`}>
+    <section className={style.login}>
+      <img src="/RICKEPICO.gif" alt="rick" className={style.image} />
       <form className={style.inicio}>
         <h1 className={style.titulo}>Welcome everyone!</h1>
-        <div className={style.div}>
-          <label className={style.label} htmlFor="email">
-            Email
-          </label>
-          <input
-            className={`${style.items} ${
-              errors.email ? style.error : style.right
-            }`}
-            type="text"
-            name="email"
-            id="email"
-            value={userData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <span className={style.span}>{errors.email}</span>}
 
-          <label className={style.label2} htmlFor="password">
-            Password
-          </label>
-          <input
-            className={`${style.items2} ${
-              errors.password ? style.error : style.right
-            }`}
-            type="password"
-            name="password"
-            id="password"
-            value={userData.password}
-            onChange={handleChange}
-          />
-          {errors.password && (
-            <span className={style.span2}>{errors.password}</span>
-          )}
+        <label className={style.label} htmlFor="email">
+          Email:
+        </label>
+        <input
+          className={`${style.items} ${
+            errors.email ? style.error : style.right
+          }`}
+          type="text"
+          name="email"
+          id="email"
+          value={userData.email}
+          onChange={handleChange}
+        />
+        {errors.email && (
+          <span className={style.span}>{`*${errors.email}`}</span>
+        )}
 
-          <button className={style.boton} onClick={handleSubmit}>
-            Login
-          </button>
-        </div>
+        <label className={style.label2} htmlFor="password">
+          Password:
+        </label>
+        <input
+          className={`${style.items2} ${
+            errors.password ? style.error : style.right
+          }`}
+          type="password"
+          name="password"
+          id="password"
+          value={userData.password}
+          onChange={handleChange}
+        />
+        {errors.password && (
+          <span className={style.span2}>{`*${errors.password}`}</span>
+        )}
+
+        <button className={style.boton} onClick={handleSubmit}>
+          Login
+        </button>
       </form>
-    </div>
+    </section>
   );
 };
 

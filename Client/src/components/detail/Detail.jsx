@@ -22,18 +22,20 @@ const Detail = () => {
 
   return character.name ? (
     <>
-      <div className={style.Detail}>
-        <div className={style.info}>
-          <h2>{character.name}</h2>
-          <h4>STATUS: {character.status}</h4>
-          <h4>GENDER: {character.gender}</h4>
-          <h4>SPECIE: {character.species}</h4>
-          <h4>ORIGIN: {character.origin.name}</h4>
+      <div className={style.containerDetail}>
+        <div className={style.characterContainer}>
+          <div className={style.img}>
+            <img src={character.image} alt="characterimage" className={style.image} />
+          </div>
+          <div className={style.info}>
+            <h2>{character.name}</h2>
+            <h4>STATUS: {character.status}</h4>
+            <h4>GENDER: {character.gender}</h4>
+            <h4>SPECIE: {character.species}</h4>
+            <h4>ORIGIN: {character.origin.name}</h4>
+          </div>
         </div>
 
-        <div className={style.img}>
-          <img src={character.image} alt="characterimage" />
-        </div>
         <img
           className={style.portal}
           src="/portal-in-space-to-other-universes-png.webp"

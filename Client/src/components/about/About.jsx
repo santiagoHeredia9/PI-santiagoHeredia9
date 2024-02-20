@@ -1,8 +1,12 @@
 import style from "./About.module.css";
+import { Link } from "react-router-dom";
 const About = () => {
   return (
-    <>
-      <h1 className={style.title}>About me</h1>
+    <section className={style.container}>
+      <Link to="/home">
+        <span className={style.back}>{`< Back to home`}</span>
+      </Link>
+      <h2 className={style.title}>About me</h2>
       <div className={style.aboutContainer}>
         <img className={style.imagen} src="/santi.jpg" alt="Santiago" />
         <div>
@@ -38,7 +42,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

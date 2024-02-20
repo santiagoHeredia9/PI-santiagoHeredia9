@@ -11,7 +11,6 @@ export default function Card(props) {
   const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
-
     if (myFavs) {
       myFavs.forEach((fav) => {
         if (fav.id === props.id) {
@@ -27,28 +26,30 @@ export default function Card(props) {
       dispatch(removeFav(props.id));
     } else {
       setIsFav(true);
-      dispatch(
-        addFav(props)
-      );
+      dispatch(addFav(props));
     }
   };
 
   const handleCloseFav = (id) => {
-
     if (isFav) {
-      const confirmDelete = window.confirm("You are going to delete this character from favorites. Are you sure?")
-      confirmDelete ? dispatch(removeFav(id)) : "";
-      setIsFav(false)
-
+      const confirmDelete = window.confirm(
+        "You are going to delete this character from favorites. Are you sure?"
+      );
+      if (confirmDelete) {
+        dispatch(removeFav(id));
+        setIsFav(false);
+      } else {
+        return;
+      }
     }
-  }
+  };
 
   const handleClose = (id) => {
-    dispatch(deleteCharacter(id))
-  }
+    dispatch(deleteCharacter(id));
+  };
 
   return (
-    <div className={style.cartas}>
+    <section className={isFav ? style.cartasFav : style.cartas}>
       {isFav ? (
         <span className={style.heart} onClick={handleFavorite}>
           ❤️
@@ -59,37 +60,39 @@ export default function Card(props) {
         </span>
       )}
 
-      {
-        isFav ? (
-          <button onClick={() => handleCloseFav(props.id)} className={style.boton}>X</button>
-        ) : (
-          <button onClick={() => handleClose(props.id)} className={style.boton}>X</button>
-        )
-      }
+      {isFav ? (
+        <span onClick={() => handleCloseFav(props.id)} className={style.boton}>
+          ×
+        </span>
+      ) : (
+        <span onClick={() => handleClose(props.id)} className={style.boton}>
+          ×
+        </span>
+      )}
+
       <Link className={style.link} to={`/detail/${props.id}`}>
-        <h2>{props.name}</h2>
+        <h3>{props.name}</h3>
       </Link>
       <img src={props.image} alt="characterimage" className={style.img} />
       <div className={style.info}>
-        <h2>
-          <span className={style.span}>Gender: </span>
+        <h3>
+          <span className={style.span}>Gender: </span> <br />
           {props.gender}
-        </h2>
-        <h2>
-          <span className={style.span}>Specie: </span>
+        </h3>
+        <h3>
+          <span className={style.span}>Specie: </span> <br />
           {props.species}
-        </h2>
-      </div>
-      <div className={style.info2}>
-        <h2>
-          <span className={style.span}>Status: </span>
+        </h3>
+
+        <h3>
+          <span className={style.span}>Status: </span> <br />
           {props.status}
-        </h2>
-        <h2>
-          <span className={style.span}>From: </span>
-          {props.origin}
-        </h2>
+        </h3>
+        <h3>
+          <span className={style.span}>From: </span> <br />
+          {props.origin.name}
+        </h3>
       </div>
-    </div>
+    </section>
   );
 }

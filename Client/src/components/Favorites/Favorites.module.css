@@ -1,25 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.7rem;
+  margin: 0 auto;
+}
+
+.gridFav {
+  width: 80%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+  place-items: center;
+}
+
+.selectSection {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
 .select1 {
-    height: 1.5rem;
-    width: 7rem;
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    left: 10rem;
-    top: 0rem;
-    color: rgb(40, 40, 40);
+  background-color: rgb(33, 148, 230);
+  border: none;
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
 }
 
 .select2 {
-    height: 1.5rem;
-    width: 7rem;
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    left: 2rem;
-    top: 0rem;
-    color: rgb(41, 41, 41);
+  background-color: rgb(33, 148, 230);
+  border: none;
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
 }
-
-.container {
-    position: relative;
-
-}
-

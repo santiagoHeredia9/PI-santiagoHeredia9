@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import style from "../nav-bar/Nav.module.css";
+import style from "../Nav-bar/Nav.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCharacter } from "../../redux/actions";
 import axios from "axios";
@@ -33,16 +33,16 @@ export default function SearchBar() {
 
 
   return (
-    <div>
+    <div className={style.searchSection}>
       <input
-        className={style.bar}
+        className={style.searchBar}
         type="search"
         value={id}
         onChange={handleChange}
         placeholder="Introduce a number "
       />
-      <button className={style.navitem2} onClick={() => onSearch(id)}>
-        ADD
+      <button className={style.add} onClick={() => onSearch(id)}>
+      <img src="/search.svg" alt="dou"  className={style.search}/>
       </button>
     </div>
   );
