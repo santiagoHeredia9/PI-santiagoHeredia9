@@ -1,0 +1,25 @@
+.message{
+    position: absolute;
+    font-size: 3rem;
+    color: azure;
+    top: 5rem;
+    left: 3rem;
+    font-family: "Kode Mono", monospace;
+    
+}
+
+
+
+.error{
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    position: relative;
+    white-space: pre-wrap;
+}
+
+.background{
+    width: 100%;
+    height: 100vh;
+  
+}

@@ -3,7 +3,7 @@
 import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { useDispatch } from "react-redux";
-import { filterCards, orderCards } from "../../redux/actions";
+import { filterAll, filterCards, orderCards } from "../../redux/actions";
 import style from "./Favorites.module.css";
 
 const Favorites = () => {
@@ -15,9 +15,14 @@ const Favorites = () => {
   };
 
   const handleFilter = (e) => {
-    dispatch(filterCards(e.target.value));
-  };
+    const filterValue = e.target.value;
 
+    if (filterValue === "all") {
+      dispatch(filterAll());
+    } else {
+      dispatch(filterCards(filterValue));
+    }
+  };
   return (
     <section>
       <div className={style.container}>
@@ -29,6 +34,7 @@ const Favorites = () => {
           </select>
           <select className={style.select2} onChange={handleFilter}>
             <option>Select gender</option>
+            <option value="all">All</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Genderless">Genderless</option>

@@ -1,19 +1,7 @@
-@keyframes hr-movil {
-  0%,
-  100% {
-    transform: translate(0);
-  }
-  50% {
-    transform: translate(
-      -2rem
-    ); /* Puedes ajustar la distancia que se mueve hacia arriba */
-  }
-}
-
 .title {
   font-family: "Kode Mono", monospace;
   color: antiquewhite;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .back {
@@ -23,10 +11,10 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
+  transition: all 0.8s ease;
 }
 
 .back:hover {
-  transition: all 0.8s ease;
   font-size: 1.2rem;
   border: 1px solid white;
 }
@@ -36,30 +24,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: 8rem;
 }
 
 .aboutContainer {
   font-weight: bold;
-  color: antiquewhite;
+  color: rgb(255, 152, 83);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 7rem;
+  gap: 5rem;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 .imagen {
-  width: 24rem;
-  height: 24rem;
-  border: 2px solid rgb(255, 255, 255);
+  width: 20rem;
+  height: 20rem;
+  border: 0.3rem solid rgb(255, 255, 255);
   border-radius: 100%;
 }
 
 hr {
   width: 20rem;
-  animation: hr-movil 2s ease-in-out infinite;
 }
 
-p {
-  text-shadow: 10px 10px 10px rgb(131, 131, 131);
+.p {
+  background: linear-gradient(to right, #fbd0be, #e76f33);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Puedes ajustar los colores y la dirección del gradiente según tus preferencias */
 }

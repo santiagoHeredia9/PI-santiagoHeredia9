@@ -1,13 +1,29 @@
-import { FETCH_CHARACTER, ADD_FAV, REMOVE_FAV, FILTER, ORDER, DELETE_CHARACTER } from "./actions";
+import {
+  FETCH_CHARACTER,
+  ADD_FAV,
+  REMOVE_FAV,
+  FILTER,
+  ORDER,
+  DELETE_CHARACTER,
+  FILTER_ALL,
+  LANGUAGE,
+} from "./actions";
 
 const initialState = {
   allCharacters: [],
   myFavorites: [],
+  allMyFavorites: [],
+  language: false,
 };
-let allCharactersOrder, myFavoritesOrder, sortOrder;
+let myFavoritesOrder, sortOrder;
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
+    case LANGUAGE:
+      return {
+        ...state,
+        language: !state.language,
+      };
     case FETCH_CHARACTER:
       return {
         ...state,
@@ -17,46 +33,48 @@ const reducer = (state = initialState, { type, payload }) => {
     case DELETE_CHARACTER:
       return {
         ...state,
-        allCharacters: state.allCharacters.filter((char) => char.id !== payload)
-      }
-    case ADD_FAV:
-      // Verificamos si el personaje ya está en favoritos antes de agregarlo
-      if (state.myFavorites.find((char) => char.id === payload.id)) {
-        return state; // No hacemos cambios si ya está en favoritos
-      }
+        allCharacters: state.allCharacters.filter(
+          (char) => char.id !== payload
+        ),
+      };
+    case ADD_FAV: {
+      const updatedMyFavorites = [...state.myFavorites, payload];
       return {
         ...state,
-        myFavorites: [...state.myFavorites, payload],
+        myFavorites: updatedMyFavorites,
+        allMyFavorites: updatedMyFavorites, // Actualiza allMyFavorites con la copia sin filtrar
       };
-
+    }
     case REMOVE_FAV:
       return {
         ...state,
-        myFavorites: state.myFavorites.filter(
-          (char) => char.id !== payload
-        )
+        myFavorites: state.myFavorites.filter((char) => char.id !== payload),
       };
 
-    case FILTER:
+    case FILTER: {
+      const filteredFavorites = state.allMyFavorites.filter(
+        (char) => char.gender === payload
+      );
       return {
         ...state,
-        myFavorites: state.allCharacters.filter(
-          (char) => char.gender === payload
-        ),
+        myFavorites: filteredFavorites,
+      };
+    }
+    case FILTER_ALL:
+      return {
+        ...state,
+        myFavorites: [...state.allMyFavorites],
       };
 
     case ORDER:
-      allCharactersOrder = [...state.allCharacters];
       myFavoritesOrder = [...state.myFavorites];
 
       sortOrder = payload === "D" ? -1 : 1;
 
-      allCharactersOrder.sort((a, b) => sortOrder * (a.id - b.id));
       myFavoritesOrder.sort((a, b) => sortOrder * (a.id - b.id));
 
       return {
         ...state,
-        allCharacters: allCharactersOrder,
         myFavorites: myFavoritesOrder,
       };
 

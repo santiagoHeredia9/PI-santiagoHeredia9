@@ -8,19 +8,19 @@ const Nav = ({ onSearch }) => {
     <header className={style.navbar}>
       {/* logo */}
       <nav className={style.navigation}>
-        <Link to="/home">
-          <button className={style.home}>Home</button>
+        <Link className={style.text} to="/home">
+          <span className={style.home}>HOME</span>
         </Link>
-        <Link to="/about">
-          <button className={style.about}>About</button>
-        </Link>
-
-        <Link to="/favorites">
-          <button className={style.fav}>Favorites</button>
+        <Link className={style.text} to="/about">
+          <span className={style.about}>ABOUT</span>
         </Link>
 
-        <Link to="/">
-          <button className={style.logOut}>Log out</button>
+        <Link className={style.text} to="/favorites">
+          <span className={style.fav}>FAVORITES</span>
+        </Link>
+
+        <Link className={style.text} to="/">
+          <span className={style.logOut}>LOG OUT</span>
         </Link>
       </nav>
 

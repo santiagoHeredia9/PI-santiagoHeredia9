@@ -14,12 +14,12 @@
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   gap: 2rem;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 3rem auto 0 auto;
   place-items: center;
 }
 
 .selectSection {
-  margin-top: 2rem;
+  margin-top: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@
 }
 
 .select1 {
-  background-color: rgb(33, 148, 230);
+  background-color: rgb(216, 81, 185);
   border: none;
   color: rgb(255, 255, 255);
   margin: 0 auto;
@@ -38,7 +38,7 @@
 }
 
 .select2 {
-  background-color: rgb(33, 148, 230);
+  background-color: rgb(216, 81, 185);
   border: none;
   color: rgb(255, 255, 255);
   margin: 0 auto;

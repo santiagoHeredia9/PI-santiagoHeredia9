@@ -50,48 +50,52 @@ export default function Card(props) {
 
   return (
     <section className={isFav ? style.cartasFav : style.cartas}>
-      {isFav ? (
-        <span className={style.heart} onClick={handleFavorite}>
-          ❤️
-        </span>
-      ) : (
-        <span className={style.heart} onClick={handleFavorite}>
-          🤍
-        </span>
-      )}
-
-      {isFav ? (
-        <span onClick={() => handleCloseFav(props.id)} className={style.boton}>
-          ×
-        </span>
-      ) : (
-        <span onClick={() => handleClose(props.id)} className={style.boton}>
-          ×
-        </span>
-      )}
-
+      <img src={props.image} alt="characterimage" className={style.img} />
       <Link className={style.link} to={`/detail/${props.id}`}>
         <h3>{props.name}</h3>
       </Link>
-      <img src={props.image} alt="characterimage" className={style.img} />
       <div className={style.info}>
-        <h3>
-          <span className={style.span}>Gender: </span> <br />
+        <p>
+          <strong className={style.span}>Gender: </strong>
           {props.gender}
-        </h3>
-        <h3>
-          <span className={style.span}>Specie: </span> <br />
+        </p>
+        <p>
+          <strong className={style.span}>Specie: </strong>
           {props.species}
-        </h3>
+        </p>
 
-        <h3>
-          <span className={style.span}>Status: </span> <br />
+        <p>
+          <strong className={style.span}>Status: </strong>
           {props.status}
-        </h3>
-        <h3>
-          <span className={style.span}>From: </span> <br />
+        </p>
+        <p>
+          <strong className={style.span}>From: </strong>
           {props.origin.name}
-        </h3>
+        </p>
+      </div>
+      <div className={style.buttonSection}>
+        {isFav ? (
+          <span className={style.unFav} onClick={handleFavorite}>
+            Remove fav
+          </span>
+        ) : (
+          <span className={style.fav} onClick={handleFavorite}>
+            Add favorite
+          </span>
+        )}
+
+        {isFav ? (
+          <span
+            onClick={() => handleCloseFav(props.id)}
+            className={style.close}
+          >
+            Close card
+          </span>
+        ) : (
+          <span onClick={() => handleClose(props.id)} className={style.close}>
+            Close card
+          </span>
+        )}
       </div>
     </section>
   );

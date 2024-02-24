@@ -28,9 +28,7 @@
   background-color: rgb(10, 99, 81);
   border-radius: 1rem;
   box-shadow: 10px 10px 20px rgba(142, 182, 9, 0.495);
-  
 }
-
 
 .titulo {
   font-family: "Kode Mono", monospace;
@@ -45,14 +43,13 @@
   cursor: pointer;
 }
 
-label {
+.label {
   font-size: 1.4rem;
   color: rgb(217, 217, 217);
 }
-input {
+.items {
   height: 1.2rem;
   width: 50%;
-  border-radius: 5px;
   border: 1px solid black;
 }
 
@@ -79,6 +76,7 @@ input {
   background-color: rgb(189, 252, 0);
   border-radius: 1rem;
   border: none;
+  font-weight: bold;
 }
 
 .boton:hover {
@@ -86,4 +84,154 @@ input {
   background-color: rgb(10, 99, 81);
   color: rgb(189, 252, 0);
   border: 1px solid rgb(189, 252, 0);
+}
+
+/* Smartphones */
+@media screen and (max-width: 736px) {
+  .login {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .image {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .inicio {
+    height: 20rem;
+    width: 20rem;
+    gap: 1.1rem;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .items {
+    height: 0.8rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .span {
+    font-size: 0.5rem;
+    position: absolute;
+    top: 10.7rem;
+  }
+
+  .span2 {
+    font-size: 0.5rem;
+    position: absolute;
+    top: 15.3rem;
+  }
+
+  .boton {
+    height: 2rem;
+    width: 5rem;
+    border-radius: 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Tablet and Ipad devices */
+
+@media screen and (min-width: 737px) and (max-width: 1024px) {
+  .login {
+    gap: 1rem;
+  }
+
+  .inicio {
+    width: 21rem;
+    height: 21rem;
+    gap: 1.3rem;
+  }
+
+  .image {
+    width: 22rem;
+    height: 22rem;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+  }
+
+  .items {
+    height: 0.8rem;
+  }
+
+  .label {
+    font-size: 1.2rem;
+  }
+
+  .span {
+    font-size: 0.55rem;
+    position: absolute;
+    top: 11.4rem;
+  }
+
+  .span2 {
+    font-size: 0.55rem;
+    position: absolute;
+    top: 16.5rem;
+  }
+
+  .boton {
+    height: 2rem;
+    width: 5rem;
+    font-size: 0.7rem;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Notebooks devices */
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .login {
+    gap: 2.5rem;
+  }
+
+  .inicio {
+    width: 28rem;
+    height: 28rem;
+    gap: 1.5rem;
+  }
+
+  .image {
+    width: 32rem;
+    height: 32rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .items {
+    height: 1rem;
+  }
+
+  .label {
+    font-size: 1.5rem;
+  }
+
+  .span {
+    font-size: 0.6rem;
+    position: absolute;
+    top: 15.2rem;
+  }
+
+  .span2 {
+    font-size: 0.6rem;
+    position: absolute;
+    top: 21.4rem;
+  }
+
+  .boton {
+    height: 2rem;
+    width: 5rem;
+    font-size: 0.7rem;
+    border-radius: 0.5rem;
+  }
 }

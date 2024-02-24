@@ -72,11 +72,11 @@ const Form = () => {
           <span className={style.span}>{`*${errors.email}`}</span>
         )}
 
-        <label className={style.label2} htmlFor="password">
+        <label className={style.label} htmlFor="password">
           Password:
         </label>
         <input
-          className={`${style.items2} ${
+          className={`${style.items} ${
             errors.password ? style.error : style.right
           }`}
           type="password"

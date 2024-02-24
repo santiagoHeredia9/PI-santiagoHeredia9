@@ -11,7 +11,7 @@
 }
 
 .containerDetail {
-
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,10 +21,11 @@
 
 .characterContainer{
     animation: animation-detail 2s ease-in-out infinite;
-    margin-top: 3rem;
+   margin: 3rem auto 0 auto;
    background-color: rgb(0, 143, 0);
    box-shadow: 10px 10px 20px green;
    border-radius: 1rem;
+   width: 20rem;
  
 }
 
@@ -40,7 +41,9 @@
 }
 
 .image{
-  border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
 }
 
 

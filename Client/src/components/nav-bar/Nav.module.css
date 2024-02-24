@@ -1,10 +1,14 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20rem;
-  background-color: rgb(92, 92, 92);
-  height: 5rem;
+  background-color: rgb(39, 49, 59);
+  height: 4.5rem;
+  z-index: 1000;
 }
 
 .navigation {
@@ -13,89 +17,102 @@
   align-items: center;
   height: 5rem;
   width: auto;
-  gap: 6rem;
+  gap: 9rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
 }
 
 .home {
-  background-color: rgb(219, 151, 24);
+  text-decoration: none;
   border: none;
-  border-radius: 14px;
-  color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  color: rgba(255, 255, 255, 0.781);
   height: 1rem;
   width: 4rem;
   height: 1.8rem;
   text-align: center;
-  font-size: 0.75rem; 
+  font-size: .83rem;
+
+  transition: all 0.8s ease;
 }
 
 .about {
-  background-color: rgb(219, 151, 24);
+  text-decoration: none;
   border: none;
   border-radius: 14px;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.781);
   height: 1rem;
   width: 4rem;
   height: 1.8rem;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: .83rem;
+
+  transition: color 0.8s ease;
 }
 
 .fav {
-  background-color: rgb(180, 48, 206);
+  text-decoration: none;
   border: none;
   border-radius: 14px;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.781);
   height: 1rem;
   width: 4rem;
   height: 1.8rem;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: .83rem;
+
+  transition: color 0.8s ease;
 }
 
 .logOut {
-  background-color: rgb(180, 30, 30);
+  text-decoration: none;
   border: none;
   border-radius: 14px;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.781);
   height: 1rem;
   width: 4rem;
   height: 1.8rem;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: .83rem;
+
+  transition: color 0.8s ease;
 }
 
 .home:hover {
-  transition: background-color 0.8s ease;
-  background-color: rgb(133, 101, 12);
+  color: aqua;
   cursor: pointer;
 }
 
 .about:hover {
-  transition: background-color 0.8s ease;
-  background-color: rgb(133, 101, 12);
+  color: aqua;
   cursor: pointer;
 }
 
-.logOut:hover{
-    transition: background-color 0.8s ease;
-    background-color: rgb(110, 19, 19);
-    cursor: pointer;
+.logOut:hover {
+  color: rgb(223, 72, 72);
+  cursor: pointer;
 }
 
-.fav:hover{
-    transition: background-color 0.8s ease;
-    background-color: rgb(117, 33, 93);
-    cursor: pointer;
+.fav:hover {
+  color: rgb(203, 67, 165);
+  cursor: pointer;
 }
 
 .searchBar {
-  height: 1.7rem;
-  width: 20rem;
+  height: 1.5rem;
+  width: 15rem;
   margin-right: 2rem;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.736);
+  transition: all 0.5s;
+}
+
+.searchBar:hover{
+  box-shadow: 2px 2px 10px greenyellow;
 }
 
 .add {
-  background-color: rgb(94, 202, 0);
+  background-color: rgb(56, 216, 152);
   border: none;
   border-radius: 14px;
   color: rgb(255, 255, 255);
@@ -104,22 +121,27 @@
   height: 2.5rem;
   text-align: center;
   font-size: 0.9rem;
+  transition: all 0.8s ease;
 }
 
-.add:hover{
-    transition: background-color 0.8s ease;
-    background-color: rgb(5, 100, 0);
-    cursor: pointer;
+.add:hover {
+  background-color: rgb(91, 250, 194);
+  transform: translateY(-0.3rem);
+  cursor: pointer;
 }
 
-.search{
+.search {
   color: white;
   height: 1.3rem;
   width: 4rem;
 }
 
-.searchSection{
+.searchSection {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.text {
+  text-decoration: none;
 }

@@ -21,16 +21,19 @@ export default function SearchBar() {
         `http://localhost:3001/rickandmorty/character/${id}`
       );
 
-      if (characters.some((char) => char.name === response.data.name)) {
-        alert("this character already exists!");
+      if (!response.data.name) {
+        alert("This character doesn't exist");
       } else {
-        console.log(dispatch(fetchCharacter(response.data)));
+        if (characters.some((char) => char.name === response.data.name)) {
+          alert("this character already exists!");
+        } else {
+          console.log(dispatch(fetchCharacter(response.data)));
+        }
       }
     } catch (error) {
       console.error(error);
     }
   };
-
 
   return (
     <div className={style.searchSection}>
@@ -42,7 +45,7 @@ export default function SearchBar() {
         placeholder="Introduce a number "
       />
       <button className={style.add} onClick={() => onSearch(id)}>
-      <img src="/search.svg" alt="dou"  className={style.search}/>
+        <img src="/search.svg" alt="dou" className={style.search} />
       </button>
     </div>
   );
