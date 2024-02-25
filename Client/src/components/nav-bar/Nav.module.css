@@ -3,7 +3,7 @@
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20rem;
   background-color: rgb(39, 49, 59);
@@ -31,7 +31,7 @@
   width: 4rem;
   height: 1.8rem;
   text-align: center;
-  font-size: .83rem;
+  font-size: 0.83rem;
 
   transition: all 0.8s ease;
 }
@@ -45,7 +45,7 @@
   width: 4rem;
   height: 1.8rem;
   text-align: center;
-  font-size: .83rem;
+  font-size: 0.83rem;
 
   transition: color 0.8s ease;
 }
@@ -59,7 +59,7 @@
   width: 4rem;
   height: 1.8rem;
   text-align: center;
-  font-size: .83rem;
+  font-size: 0.83rem;
 
   transition: color 0.8s ease;
 }
@@ -73,7 +73,7 @@
   width: 4rem;
   height: 1.8rem;
   text-align: center;
-  font-size: .83rem;
+  font-size: 0.83rem;
 
   transition: color 0.8s ease;
 }
@@ -98,16 +98,23 @@
   cursor: pointer;
 }
 
+.openMenu,
+.closeMenu {
+  display: none;
+}
+
 .searchBar {
   height: 1.5rem;
-  width: 15rem;
+  width: 17rem;
   margin-right: 2rem;
   color: rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 0.736);
   transition: all 0.5s;
+  border-radius: 0.5rem;
+  border: none;
 }
 
-.searchBar:hover{
+.searchBar:hover {
   box-shadow: 2px 2px 10px greenyellow;
 }
 
@@ -144,4 +151,63 @@
 
 .text {
   text-decoration: none;
+}
+
+/* Smartphones */
+@media screen and (max-width: 736px) {
+  .openMenu,
+  .closeMenu {
+    display: block;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    background-color: rgb(71, 71, 71);
+    height: 100vh;
+    padding: 2rem;
+    gap: 4rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .visible{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .searchBar{
+    position: absolute;
+    width: 10rem;
+    right: 8rem;
+    border-radius: 0;
+  }
+
+  .add{
+    position: absolute;
+    right: 7rem;
+    width: 4rem;
+    height: 2rem;
+    border-radius: .5rem;
+  }
+
+  .search{
+    text-align: center;
+  }
+}
+
+/* Tablet and Ipad devices */
+
+@media screen and (min-width: 737px) and (max-width: 1024px) {
+}
+
+/* Notebooks devices */
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
 }

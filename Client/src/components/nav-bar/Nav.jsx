@@ -2,12 +2,32 @@
 import { Link } from "react-router-dom";
 import SearchBar from "../Searchbar/SearchBar";
 import style from "./Nav.module.css";
+import { useState } from "react";
 
 const Nav = ({ onSearch }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openMenu = () => {
+    setIsOpen(true);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className={style.navbar}>
-      {/* logo */}
-      <nav className={style.navigation}>
+      <button className={style.openMenu} onClick={openMenu}>
+        <img src="/justify.svg" alt="menu" />
+      </button>
+      <nav
+        className={
+          isOpen ? `${style.navigation} ${style.visible}` : style.navigation
+        }
+      >
+        <button className={style.closeMenu} onClick={closeMenu}>
+          x
+        </button>
         <Link className={style.text} to="/home">
           <span className={style.home}>HOME</span>
         </Link>
