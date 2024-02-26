@@ -18,7 +18,7 @@ const Nav = ({ onSearch }) => {
   return (
     <header className={style.navbar}>
       <button className={style.openMenu} onClick={openMenu}>
-        <img src="/justify.svg" alt="menu" />
+        <img src="/justify.svg" alt="menu" className={style.burguer} />
       </button>
       <nav
         className={

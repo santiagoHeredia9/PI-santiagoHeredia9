@@ -1,5 +1,5 @@
 .cartas {
-  transition: all 1s ease;
+  transition: background-color 1s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@
 }
 
 .cartasFav {
-  transition: all 1s ease;
+  transition: background-color 1s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,6 @@
   width: 20rem;
   height: 34rem;
   position: relative;
- 
 }
 
 .img {
@@ -40,7 +39,7 @@
   color: rgb(235, 246, 255);
   font-weight: bold;
   margin-left: 1rem;
-  padding-bottom: .3rem;
+  padding-bottom: 0.3rem;
 }
 .buttonSection {
   display: flex;
@@ -62,37 +61,37 @@
   font-weight: 600;
   font-size: small;
   transition: all 0.5s ease;
-}
-
-.fav:hover {
-  background-color: rgba(255, 255, 255, 0.944);
-  color: rgb(237, 72, 193);
-  transform: translateY(-0.3rem);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.944);
+    color: rgb(237, 72, 193);
+    transform: translateY(-0.3rem);
+  }
 }
 
 .unFav {
   top: 1rem;
   right: 1rem;
   cursor: pointer;
-  background-color: rgb(158, 77, 234);
+  background-color: rgba(131, 51, 124, 0.901);
   padding: 0.4rem;
   border-radius: 0.5rem;
   color: rgb(255, 255, 255);
   font-weight: 600;
   font-size: small;
   transition: all 0.5s ease;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.901);
+    color: rgb(237, 72, 193);
+    transform: translateY(-0.3rem);
+  }
 }
-.unFav:hover {
-  background-color: rgba(255, 255, 255, 0.901);
-  color: rgb(237, 72, 193);
-  transform: translateY(-0.3rem);
-}
+
 
 .close {
   top: 1rem;
   right: 1rem;
   cursor: pointer;
-  background-color: rgb(205, 93, 93);
+  background-color: rgb(201, 63, 63);
   padding: 0.4rem;
   border-radius: 0.5rem;
   color: white;
@@ -118,8 +117,6 @@
   color: antiquewhite;
 }
 
-.span{
-  margin-right: .4rem;
+.span {
+  margin-right: 0.4rem;
 }
-
-
