@@ -8,13 +8,13 @@ async function getCharById(req, res) {
       `https://rym2.up.railway.app/api/character/${id}?key=${APIKEY}`
     );
 
-    if (response) {
+    if (response.data.name) {
       const { status, name, species, origin, image, gender } = response.data;
       res
         .status(200)
         .json({ id, status, name, species, origin, image, gender });
     } else {
-      res.status(404).send("Not found");
+      res.status(404).json({ error: "This character doesn't exist" });
     }
   } catch (error) {
     res.status(500).send(error.message);
