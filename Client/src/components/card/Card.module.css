@@ -34,9 +34,10 @@
 }
 
 .info {
+  letter-spacing: .09rem;
   font-size: 0.8rem;
   text-align: left;
-  color: rgb(235, 246, 255);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   margin-left: 1rem;
   padding-bottom: 0.3rem;
@@ -86,7 +87,6 @@
   }
 }
 
-
 .close {
   top: 1rem;
   right: 1rem;
@@ -98,11 +98,11 @@
   font-weight: 600;
   font-size: small;
   transition: all 0.5s ease;
-}
-.close:hover {
-  background-color: rgb(124, 16, 16);
-  color: rgb(255, 255, 255);
-  transform: translateY(-0.3rem);
+  &:hover {
+    background-color: rgb(124, 16, 16);
+    color: rgb(255, 255, 255);
+    transform: translateY(-0.3rem);
+  }
 }
 
 .link {
@@ -111,10 +111,9 @@
   font-size: 1.2rem;
   text-decoration: none;
   transition: color 0.5s ease;
-}
-
-.link:hover {
-  color: antiquewhite;
+  &:hover {
+    color: antiquewhite;
+  }
 }
 
 .span {

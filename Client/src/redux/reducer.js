@@ -3,27 +3,20 @@ import {
   ADD_FAV,
   REMOVE_FAV,
   FILTER,
-  ORDER,
   DELETE_CHARACTER,
   FILTER_ALL,
-  LANGUAGE,
+  ASCENDANT_ORDER,
+  DESCENDANT_ORDER,
 } from "./actions";
 
 const initialState = {
   allCharacters: [],
+  allFavorites: [],
   myFavorites: [],
-  allMyFavorites: [],
-  language: false,
 };
-let myFavoritesOrder, sortOrder;
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case LANGUAGE:
-      return {
-        ...state,
-        language: !state.language,
-      };
     case FETCH_CHARACTER:
       return {
         ...state,
@@ -38,44 +31,41 @@ const reducer = (state = initialState, { type, payload }) => {
         ),
       };
     case ADD_FAV: {
-      const updatedMyFavorites = [...state.myFavorites, payload];
       return {
         ...state,
-        myFavorites: updatedMyFavorites,
-        allMyFavorites: updatedMyFavorites, // Actualiza allMyFavorites con la copia sin filtrar
+        allFavorites: payload,
+        myFavorites: payload,
       };
     }
     case REMOVE_FAV:
       return {
         ...state,
-        myFavorites: state.myFavorites.filter((char) => char.id !== payload),
+        allFavorites: payload,
+        myFavorites: payload,
       };
 
     case FILTER: {
-      const filteredFavorites = state.allMyFavorites.filter(
-        (char) => char.gender === payload
-      );
       return {
         ...state,
-        myFavorites: filteredFavorites,
+        myFavorites: state.allFavorites.filter((fav) => fav.gender === payload),
       };
     }
     case FILTER_ALL:
       return {
         ...state,
-        myFavorites: [...state.allMyFavorites],
+        myFavorites: state.allFavorites,
       };
 
-    case ORDER:
-      myFavoritesOrder = [...state.myFavorites];
-
-      sortOrder = payload === "D" ? -1 : 1;
-
-      myFavoritesOrder.sort((a, b) => sortOrder * (a.id - b.id));
-
+    case ASCENDANT_ORDER:
       return {
         ...state,
-        myFavorites: myFavoritesOrder,
+        myFavorites: [...state.allFavorites].sort((a, b) => a.id - b.id),
+      };
+
+    case DESCENDANT_ORDER:
+      return {
+        ...state,
+        myFavorites: [...state.allFavorites].sort((a, b) => b.id - a.id),
       };
 
     default:

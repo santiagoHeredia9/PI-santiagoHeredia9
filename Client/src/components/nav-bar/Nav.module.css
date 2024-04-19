@@ -1,12 +1,27 @@
+@keyframes blur {
+  to{
+    background: rgba(255, 255, 255, 0.788);
+    backdrop-filter: blur(5px);
+    color:black
+  }
+}
+
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 20rem;
   background-color: rgb(39, 49, 59);
-  height: 4.5rem;
+  height: auto;
+  animation: blur linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 200px;
 }
+
 
 .navigation {
   display: flex;
@@ -29,7 +44,7 @@
   height: 1.8rem;
   text-align: center;
   font-size: 0.83rem;
-  transition: color 0.8s ease;
+  transition: color 0.5s ease-out;
   &:hover {
     color: aqua;
     cursor: pointer;
@@ -46,7 +61,7 @@
   height: 1.8rem;
   text-align: center;
   font-size: 0.83rem;
-  transition: color 0.8s ease;
+  transition: color 0.5s ease-out;
   &:hover {
     color: aqua;
     cursor: pointer;
@@ -63,7 +78,7 @@
   height: 1.8rem;
   text-align: center;
   font-size: 0.83rem;
-  transition: color 0.8s ease;
+  transition: color 0.5s ease-out;
   &:hover {
     color: rgb(203, 67, 165);
     cursor: pointer;
@@ -80,7 +95,7 @@
   height: 1.8rem;
   text-align: center;
   font-size: 0.83rem;
-  transition: color 0.8s ease;
+  transition: color 0.5s ease-out;
   &:hover {
     color: rgb(223, 72, 72);
     cursor: pointer;
@@ -98,7 +113,7 @@
   margin-right: 2rem;
   color: rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 0.736);
-  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s ease-out;
   border-radius: 0.5rem;
   border: none;
   &:hover {
@@ -116,7 +131,7 @@
   height: 2.5rem;
   text-align: center;
   font-size: 0.9rem;
-  transition: background-color 0.8s ease, scale 0.8s ease;
+  transition: background-color 0.5s ease-out, scale 0.5s ease-out;
   &:hover {
     background-color: rgb(91, 250, 194);
     scale: 1.1;
@@ -160,6 +175,7 @@
   }
 
   .navigation {
+    z-index: 10000;
     position: absolute;
     top: 0;
     left: 0;
@@ -182,14 +198,12 @@
   }
 
   .searchBar {
-    position: absolute;
     width: 15rem;
     right: 8rem;
     border-radius: 0;
   }
 
   .add {
-    position: absolute;
     right: 5rem;
     width: 4rem;
     height: 2rem;

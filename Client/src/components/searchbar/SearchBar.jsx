@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import style from "../Nav-bar/Nav.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchCharacter } from "../../redux/actions";
 import axios from "axios";
 
@@ -20,18 +20,13 @@ export default function SearchBar() {
       const response = await axios(
         `http://localhost:3001/rickandmorty/character/${id}`
       );
-
-      if (!response.data.name) {
-        alert("This character doesn't exist");
+      if (characters.some((char) => char.id === response.data.id)) {
+        alert("This character already exists");
       } else {
-        if (characters.some((char) => char.name === response.data.name)) {
-          alert("this character already exists!");
-        } else {
-          console.log(dispatch(fetchCharacter(response.data)));
-        }
+        dispatch(fetchCharacter(response.data));
       }
     } catch (error) {
-      console.error(error);
+      alert(error.response.data.error);
     }
   };
 

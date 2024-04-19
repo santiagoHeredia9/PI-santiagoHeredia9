@@ -19,6 +19,18 @@ const Form = () => {
   const [isLoged, setIsLoged] = useState(false);
   const navigate = useNavigate();
 
+  // async function login(userData) {
+  //   try {
+  //     const URL = "http://localhost:3001/rickandmorty/login/";
+  //     const response = await axios.post(URL, userData);
+  //     const { access } = response.data;
+  //     setIsLoged(response.data);
+  //     access && navigate("/home");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
   async function login(userData) {
     try {
       const { email, password } = userData;
