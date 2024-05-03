@@ -8,7 +8,7 @@ const postFav = async (req, res) => {
   }
 
   try {
-    // Intentar crear un nuevo favorito
+ 
     const newFavorite = await Favorite.create({
       name,
       origin,
@@ -18,13 +18,13 @@ const postFav = async (req, res) => {
       gender,
     });
 
-    // Obtener todos los favoritos después de la creación
+    
     const allFavorites = await Favorite.findAll();
 
-    return res.status(200).json(allFavorites); // Responder con los favoritos
+    return res.status(200).json(allFavorites); 
   } catch (error) {
-    console.error("Error creating favorite:", error); // Agregar información al error
-    return res.status(500).json({ message: "Internal Server Error" }); // Manejo de errores 500
+    console.error("Error creating favorite:", error); 
+    return res.status(500).json({ message: "Internal Server Error" }); 
   }
 };
 
