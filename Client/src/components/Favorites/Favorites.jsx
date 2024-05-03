@@ -52,7 +52,6 @@ const Favorites = () => {
         </aside>
         <div className={style.gridFav}>
           {myFavs.map((character) => {
-            console.log("Character Origin:", character.origin); // Imprime el objeto origin para depurar
             return (
               <Card
                 key={character.id}
@@ -61,7 +60,7 @@ const Favorites = () => {
                 status={character.status}
                 species={character.species}
                 gender={character.gender}
-                origin={character.origin}
+                origin={character.origin.name}
                 image={character.image}
               />
             );

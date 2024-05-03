@@ -1,0 +1,243 @@
+.register {
+  display: flex;
+  margin-top: 20px;
+  background-color: rgb(97, 97, 97);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.registButton{
+  border-radius: 10px;
+  border: none;
+  font-family: "Kode Mono", monospace;
+  padding: 10px;
+  font-weight: bold;
+  background-color: rgb(97, 97, 97);
+  border: 2px solid rgb(189, 252, 0);
+  color: rgb(189, 252, 0);
+  transition: all 0.2s ease-in; 
+  &:hover{
+    color: black;
+    background-color: rgb(189, 252, 0);
+  }
+}
+
+.inicio {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  height: 35rem;
+  width: 35rem;
+  background-color: rgb(10, 99, 81);
+  border-radius: 1rem;
+}
+
+.titulo {
+  font-family: "Kode Mono", monospace;
+  font-size: 2.5rem;
+  color: rgb(189, 252, 0);
+  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.942);
+}
+
+.titulo:hover {
+  transition: color 0.7s ease;
+  color: rgb(209, 250, 148);
+  cursor: pointer;
+}
+
+.label {
+  font-size: 1.4rem;
+  color: rgb(217, 217, 217);
+}
+.items {
+  height: 1rem;
+  width: 50%;
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 5px;
+}
+
+.items:focus {
+  outline: none;
+  border: 2px solid rgb(154, 205, 3); /* Puedes mantener este si el borde está definido por border */
+}
+
+.span1 {
+  color: rgb(255, 94, 94);
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 217px;
+}
+
+.span2 {
+  color: rgb(255, 94, 94);
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 303px;
+}
+
+.span3 {
+  color: rgb(255, 94, 94);
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 390px;
+}
+
+.span4 {
+  color: rgb(255, 94, 94);
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 476px;
+}
+
+.boton {
+  height: 3rem;
+  width: 6rem;
+  font-family: "Kode Mono", monospace;
+  background-color: rgb(189, 252, 0);
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+.boton:hover {
+  transition: color 0.3s ease-in, background-color 0.3s ease-in;
+  background-color: rgb(10, 99, 81);
+  color: rgb(189, 252, 0);
+  border: 2px solid rgb(189, 252, 0);
+}
+
+/* Smartphones */
+@media screen and (max-width: 736px) {
+  .inicio {
+    height: 20rem;
+    width: 20rem;
+    gap: 1.1rem;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .items {
+    height: 0.8rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .span {
+    font-size: 0.5rem;
+    position: absolute;
+    top: 10.7rem;
+  }
+
+  .span2 {
+    font-size: 0.5rem;
+    position: absolute;
+    top: 15.3rem;
+  }
+
+  .boton {
+    height: 2rem;
+    width: 5rem;
+    border-radius: 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Tablet and Ipad devices */
+
+@media screen and (min-width: 737px) and (max-width: 1024px) {
+  .inicio {
+    width: 21rem;
+    height: 21rem;
+    gap: 1.3rem;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+  }
+
+  .items {
+    height: 0.8rem;
+  }
+
+  .label {
+    font-size: 1.2rem;
+  }
+
+  .span {
+    font-size: 0.55rem;
+    position: absolute;
+    top: 11.4rem;
+  }
+
+  .span2 {
+    font-size: 0.55rem;
+    position: absolute;
+    top: 16.5rem;
+  }
+
+  .boton {
+    height: 2rem;
+    width: 5rem;
+    font-size: 0.7rem;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Notebooks devices */
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .inicio {
+    width: 28rem;
+    height: 28rem;
+    gap: 1.5rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .items {
+    height: 1rem;
+  }
+
+  .label {
+    font-size: 1.5rem;
+  }
+
+  .span {
+    font-size: 0.6rem;
+    position: absolute;
+    top: 15.2rem;
+  }
+
+  .span2 {
+    font-size: 0.6rem;
+    position: absolute;
+    top: 21.4rem;
+  }
+
+  .boton {
+    height: 2rem;
+    width: 5rem;
+    font-size: 0.7rem;
+    border-radius: 0.5rem;
+  }
+}

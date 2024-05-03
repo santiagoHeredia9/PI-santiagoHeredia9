@@ -7,12 +7,14 @@ import {
   FILTER_ALL,
   ASCENDANT_ORDER,
   DESCENDANT_ORDER,
+  REGISTER_OR_LOGIN,
 } from "./actions";
 
 const initialState = {
   allCharacters: [],
   allFavorites: [],
   myFavorites: [],
+  isRegistered: true,
 };
 
 const reducer = (state = initialState, { type, payload }) => {
@@ -66,6 +68,12 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         myFavorites: [...state.allFavorites].sort((a, b) => b.id - a.id),
+      };
+
+    case REGISTER_OR_LOGIN:
+      return {
+        ...state,
+        isRegistered: !state.isRegistered,
       };
 
     default:

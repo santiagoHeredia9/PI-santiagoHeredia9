@@ -7,6 +7,7 @@ export const FILTER = "FILTER";
 export const FILTER_ALL = "FILTER_ALL";
 export const ASCENDANT_ORDER = "ASCENDANT_ORDER";
 export const DESCENDANT_ORDER = "DESCENDANT_ORDER";
+export const REGISTER_OR_LOGIN = "REGISTER_OR_LOGIN";
 
 export function fetchCharacter(character) {
   return {
@@ -39,7 +40,7 @@ export function addFav(character) {
 }
 
 export const removeFav = (id) => {
-  const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`
+  const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
   return async (dispatch) => {
     try {
       const { data } = await axios.delete(endpoint);
@@ -76,5 +77,11 @@ export const aOrderCards = () => {
 export const dOrderCards = () => {
   return {
     type: DESCENDANT_ORDER,
+  };
+};
+
+export const registerOrLogin = () => {
+  return {
+    type: REGISTER_OR_LOGIN,
   };
 };
