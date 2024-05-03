@@ -25,7 +25,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     !isLoged && navigate("/");
-  }, [isLoged]);
+  }, [isLoged, navigate]);
 
   const handleChange = (event) => {
     let { name, value } = event.target;
